@@ -18,8 +18,14 @@ type IPty = {
 
 const URL_RE = /https:\/\/claude\.com\/cai\/oauth\/authorize\?[A-Za-z0-9%&=_.\-]+/;
 // The long-lived (1-year) token setup-token prints on success.
-const TOKEN_RE = /sk-ant-oat[a-zA-Z0-9_-]{20,}/;
-const stripAnsi = (s: string) => s.replace(/\x1b\[[0-9;?]*[A-Za-z]/g, "").replace(/\x1b\]8;[^\x07\x1b]*(?:\x07|\x1b\\)/g, "");
+const TOKEN_RE = /sk-ant-[A-Za-z0-9_-]{24,}/;
+const stripAnsi = (s: string) =>
+  s
+    .replace(/\x1b\][0-9]?;?[^\x07\x1b]*(?:\x07|\x1b\\)/g, "") // OSC (incl. hyperlinks)
+    .replace(/\x1b\[[0-9;?]*[A-Za-z]/g, "") // CSI
+    .replace(/\x1b[()][AB0-2]/g, "") // charset designators like ESC(B
+    .replace(/\x1b[=>]/g, "")
+    .replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g, ""); // stray control chars
 
 /** Persist the long-lived token so the bot (and restarts) use it, and apply it now. */
 function saveToken(token: string) {
@@ -65,7 +71,7 @@ function endSession() {
 export async function startRelogin(): Promise<string> {
   endSession();
   const pty = await loadPty();
-  const p: IPty = pty.spawn("claude", ["setup-token"], { name: "xterm-color", cols: 100, rows: 30, env: process.env });
+  const p: IPty = pty.spawn("claude", ["setup-token"], { name: "xterm-color", cols: 1000, rows: 50, env: process.env });
   session = { pty: p, startedAt: Date.now() };
   const mine = session;
 
@@ -117,7 +123,7 @@ export async function submitCode(code: string): Promise<ReloginResult> {
   return new Promise((resolve) => {
     let buf = "";
     let settled = false;
-    const tail = () => stripAnsi(buf).replace(TOKEN_RE, "«token»").replace(/\s+/g, " ").trim().slice(-220);
+    const tail = () => stripAnsi(buf).replace(TOKEN_RE, "«token»").replace(/\s+/g, " ").trim().slice(-500);
     const tryToken = (): boolean => {
       const m = stripAnsi(buf).match(TOKEN_RE);
       if (m) {
