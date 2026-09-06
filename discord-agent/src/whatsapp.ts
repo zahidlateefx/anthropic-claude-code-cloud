@@ -145,38 +145,34 @@ export function startWhatsApp() {
     registerTransport(transport);
 
     const debug = process.env.WA_DEBUG === "1";
+    // Only act on messages that arrive after startup, so a reconnect/history
+    // sync never re-runs old commands.
+    const startedAt = Math.floor(Date.now() / 1000) - 5;
     sock.ev.on("messages.upsert", async (up: any) => {
       if (up.type !== "notify") return;
-      // The owner's own account, both as a phone number (PN) and a hidden LID.
-      const selfNums = [sock.user?.id, (sock.user as any)?.lid].filter(Boolean).map(digits);
-      const selfNum = digits(sock.user?.id ?? "");
       for (const msg of up.messages) {
+        // The bot runs ON a dedicated WhatsApp number. The owner commands it by
+        // texting that number FROM their own phones (listed in
+        // WHATSAPP_OWNER_NUMBERS). The bot NEVER acts on its own outgoing
+        // (fromMe) messages — that is what caused reply→re-trigger loops.
+        if (msg.key.fromMe) continue;
+
         // A sender can appear as a phone number OR a hidden @lid; senderPn/
         // participantPn carry the real number even when remoteJid is a lid.
         const senderNums = [msg.key.senderPn, msg.key.participantPn, msg.key.remoteJid, msg.key.participant]
           .filter(Boolean)
           .map((x: string) => digits(x));
         if (debug)
-          console.log(`WA msg fromMe=${msg.key.fromMe} jid=${msg.key.remoteJid} sender=${senderNums.join("/")} self=${selfNums.join("/")} text=${JSON.stringify(extractText(msg).slice(0, 40))}`);
+          console.log(`WA msg jid=${msg.key.remoteJid} sender=${senderNums.join("/")} ts=${msg.messageTimestamp} text=${JSON.stringify(extractText(msg).slice(0, 40))}`);
         if (!msg.message) continue;
-        if (msg.key.id && sentIds.has(msg.key.id)) continue; // our own reply
+        if (Number(msg.messageTimestamp ?? 0) < startedAt) continue; // stale/history
+        if (msg.key.id && sentIds.has(msg.key.id)) continue;
         const jid: string = msg.key.remoteJid ?? "";
         if (jid.endsWith("@g.us") || jid === "status@broadcast") continue; // 1:1 chats only
 
-        // Authorize:
-        //  - fromMe in the self-chat = owner commanding from the linked account.
-        //  - incoming from any number in WHATSAPP_OWNER_NUMBERS (e.g. the owner
-        //    texting a dedicated Friday number from their other phones).
-        if (msg.key.fromMe) {
-          if (!selfNums.includes(digits(jid))) {
-            if (debug) console.log(`WA skip fromMe: not self-chat (jid ${digits(jid)})`);
-            continue;
-          }
-        } else {
-          if (!senderNums.some((n) => config.whatsapp.owners.has(n))) {
-            if (debug) console.log(`WA skip: sender ${senderNums.join("/")} not an owner`);
-            continue;
-          }
+        if (!senderNums.some((n) => config.whatsapp.owners.has(n))) {
+          if (debug) console.log(`WA skip: sender ${senderNums.join("/")} not an owner`);
+          continue;
         }
 
         const text = extractText(msg).trim();
