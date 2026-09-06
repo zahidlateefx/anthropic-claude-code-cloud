@@ -164,6 +164,11 @@ client.once(Events.ClientReady, (c) => {
   console.log(`✅ ${config.agentName} online as ${c.user.tag}`);
   console.log(`   model=${config.model} permissions=${config.permissionMode} workspace=${config.workspace}`);
   console.log(`   owners=${[...config.ownerIds].join(",")}`);
+  // View Channels + Send Messages + Add Reactions + Attach Files + Read Message History
+  const perms = 1024 + 2048 + 64 + 32768 + 65536;
+  console.log(
+    `   Not in a server yet? Invite: https://discord.com/oauth2/authorize?client_id=${c.user.id}&scope=bot&permissions=${perms}`,
+  );
 });
 
 client.on(Events.MessageCreate, (msg) => {

@@ -17,7 +17,23 @@ Phone (Discord DM) ──▶ Bot (this repo) ──▶ Claude Agent SDK ──�
 - Koi bhi command jo tum khud terminal mein chalate — wo bhi
 - Har chat ki apni memory (session) hai, restart ke baad bhi yaad rehta hai
 
-## Setup (10 min)
+## Fastest setup (one command)
+
+Discord token aur apna user ID (neeche step 1) hath mein rakho, phir:
+
+**macOS / Linux**
+```bash
+curl -fsSL https://raw.githubusercontent.com/zahidlateefx/anthropic-claude-code-cloud/claude/instagram-reel-discord-agent-ooifkn/discord-agent/install.sh | bash
+```
+
+**Windows (PowerShell)**
+```powershell
+irm https://raw.githubusercontent.com/zahidlateefx/anthropic-claude-code-cloud/claude/instagram-reel-discord-agent-ooifkn/discord-agent/install.ps1 | iex
+```
+
+Installer Node, Claude CLI, repo, build, `claude login` (agar zaroorat ho) aur pm2 sab khud karta hai. Aakhir mein logs mein bot ka **invite link** print hota hai, wo open karke bot apne server mein add karo.
+
+## Manual setup (10 min)
 
 ### 1. Discord bot banao
 1. https://discord.com/developers/applications → **New Application** → naam do (e.g. Friday)
