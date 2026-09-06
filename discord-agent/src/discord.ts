@@ -66,16 +66,12 @@ export function startDiscord() {
       const sendable = channel as SendableChannels;
       const status = await sendable.send("💭 Working…").catch(() => null);
       const typing = setInterval(() => sendable.sendTyping().catch(() => {}), 8000);
-      let lastEdit = 0;
 
       const done = () => clearInterval(typing);
 
       return {
-        onTool(summary) {
-          const now = Date.now();
-          if (now - lastEdit < 1500) return;
-          lastEdit = now;
-          status?.edit(truncate(`🔧 ${summary}`, 1900)).catch(() => {});
+        onTool() {
+          // Intentionally silent: show only "Working…" then the final answer.
         },
         async finalize(text, files) {
           done();

@@ -115,17 +115,13 @@ export function startWhatsApp() {
       async openResponder(jid): Promise<Responder | null> {
         await sock.sendPresenceUpdate("composing", jid).catch(() => {});
         const status = await waSend(jid, { text: "💭 Working…" });
-        let lastEdit = 0;
 
         const editStatus = (text: string) =>
           status ? waSend(jid, { text, edit: status.key }) : waSend(jid, { text });
 
         return {
-          onTool(summary) {
-            const now = Date.now();
-            if (now - lastEdit < 2500) return; // WhatsApp edits are heavier than Discord
-            lastEdit = now;
-            void editStatus(`🔧 ${summary}`.slice(0, 700));
+          onTool() {
+            // Intentionally silent: show only "Working…" then the final answer.
             void sock.sendPresenceUpdate("composing", jid).catch(() => {});
           },
           async finalize(text, files) {
