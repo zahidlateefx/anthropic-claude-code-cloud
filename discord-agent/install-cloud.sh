@@ -81,6 +81,8 @@ pm2 start dist/index.js --name friday --time
 pm2 save >/dev/null
 sudo env PATH="$PATH" pm2 startup systemd -u "$USER" --hp "$HOME" >/dev/null 2>&1 || true
 
+sudo install -m 755 bin/friday /usr/local/bin/friday 2>/dev/null && say "Installed 'friday' helper (type: friday help)" || true
+
 IP="$(curl -fsS4 ifconfig.me 2>/dev/null || echo YOUR_CLOUD_IP)"
 sleep 4
 pm2 logs friday --lines 25 --nostream || true

@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Simple wrapper so you don't memorize pm2/git/npm. Usage: friday <word>
+set -euo pipefail
+DIR="${FRIDAY_DIR:-$HOME/friday/discord-agent}"
+cd "$DIR"
+
+case "${1:-help}" in
+  logs|log)      pm2 logs friday ;;
+  status|st)     pm2 status ;;
+  restart|r)     pm2 restart friday --update-env ;;
+  stop)          pm2 stop friday ;;
+  start)         pm2 start friday 2>/dev/null || pm2 start dist/index.js --name friday --time ;;
+  update|up)     git pull && npm install && npm run build && pm2 restart friday --update-env && echo "✅ updated" ;;
+  token|login)   claude setup-token ;;
+  edit|agent)    "${EDITOR:-nano}" AGENT.md ;;
+  qr)            pm2 logs friday --lines 60 --nostream ;;
+  help|*)
+    cat <<TXT
+friday commands:
+  friday logs      # live logs (bot kya kar raha hai)
+  friday status    # chal raha hai ya nahi
+  friday restart   # dobara chalu karo
+  friday update    # latest code le kar restart
+  friday token     # naya 1-saal Claude token (setup-token)
+  friday edit      # AGENT.md kholo (apne rules/projects)
+  friday qr        # WhatsApp QR / recent logs
+  friday stop      # bot band
+  friday start     # bot chalu
+TXT
+    ;;
+esac
