@@ -151,25 +151,30 @@ export function startWhatsApp() {
       const selfNums = [sock.user?.id, (sock.user as any)?.lid].filter(Boolean).map(digits);
       const selfNum = digits(sock.user?.id ?? "");
       for (const msg of up.messages) {
+        // A sender can appear as a phone number OR a hidden @lid; senderPn/
+        // participantPn carry the real number even when remoteJid is a lid.
+        const senderNums = [msg.key.senderPn, msg.key.participantPn, msg.key.remoteJid, msg.key.participant]
+          .filter(Boolean)
+          .map((x: string) => digits(x));
         if (debug)
-          console.log(`WA msg fromMe=${msg.key.fromMe} jid=${msg.key.remoteJid} self=${selfNums.join("/")} text=${JSON.stringify(extractText(msg).slice(0, 40))}`);
+          console.log(`WA msg fromMe=${msg.key.fromMe} jid=${msg.key.remoteJid} sender=${senderNums.join("/")} self=${selfNums.join("/")} text=${JSON.stringify(extractText(msg).slice(0, 40))}`);
         if (!msg.message) continue;
         if (msg.key.id && sentIds.has(msg.key.id)) continue; // our own reply
         const jid: string = msg.key.remoteJid ?? "";
         if (jid.endsWith("@g.us") || jid === "status@broadcast") continue; // 1:1 chats only
 
-        // Authorize. The bot runs on the owner's own WhatsApp, so the owner
-        // commands it from the self-chat (messages there are `fromMe`, and the
-        // chat id may be a phone number OR a hidden @lid).
-        const isSelfChat = selfNums.includes(digits(jid));
+        // Authorize:
+        //  - fromMe in the self-chat = owner commanding from the linked account.
+        //  - incoming from any number in WHATSAPP_OWNER_NUMBERS (e.g. the owner
+        //    texting a dedicated Friday number from their other phones).
         if (msg.key.fromMe) {
-          if (!isSelfChat) {
+          if (!selfNums.includes(digits(jid))) {
             if (debug) console.log(`WA skip fromMe: not self-chat (jid ${digits(jid)})`);
             continue;
           }
         } else {
-          if (!config.whatsapp.owners.has(digits(jid))) {
-            if (debug) console.log(`WA skip: sender ${digits(jid)} not an owner`);
+          if (!senderNums.some((n) => config.whatsapp.owners.has(n))) {
+            if (debug) console.log(`WA skip: sender ${senderNums.join("/")} not an owner`);
             continue;
           }
         }
