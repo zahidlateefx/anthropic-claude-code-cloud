@@ -133,6 +133,10 @@ export function startWhatsApp() {
           onTool(summary) {
             activity = summary; // shown by the heartbeat, not per call
           },
+          onText(line) {
+            const t = line.split("\n").map((s) => s.trim()).filter(Boolean).pop();
+            if (t) activity = t.slice(0, 120); // the agent's own words = clearest progress
+          },
           async finalize(text, files) {
             clearInterval(heartbeat);
             const chunks = chunkMessage(text, WA_LIMIT);

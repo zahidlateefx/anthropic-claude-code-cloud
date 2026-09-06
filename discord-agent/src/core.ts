@@ -13,6 +13,8 @@ import { reloginActive, startRelogin, submitCode } from "./relogin.js";
 export interface Responder {
   /** Live progress line as tools run (throttled by the adapter). */
   onTool(summary: string): void;
+  /** The agent's own between-step narration (throttled by the adapter). */
+  onText?(line: string): void;
   /** Post the final answer plus any files the agent produced. */
   finalize(text: string, files: string[]): Promise<void>;
   /** Something threw before finishing. */
@@ -52,6 +54,7 @@ async function runConversation(convId: string, prompt: string) {
   try {
     const result = await runAgent(convId, `(${nowLocal()}) ${prompt}`, sessions.get(convId), {
       onTool: responder.onTool,
+      onText: responder.onText,
     });
     if (result.sessionId) sessions.set(convId, result.sessionId);
     const files = drainOutbox();

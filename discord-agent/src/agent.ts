@@ -35,6 +35,7 @@ function systemPrompt(): string {
     `- The owner may write in English, Roman Urdu/Hindi, or a mix. Reply in the same language style they used.`,
     `- If a task is ambiguous, ask ONE short clarifying question instead of guessing wildly. If it is clear, just do it and report the result.`,
     `- Long tasks are fine. Work through them fully, then summarize what you did and where the output is.`,
+    `- For long/multi-step tasks, write a short one-line note (in the owner's language) before each big step, e.g. "88 sessions padh raha hoon…", "project 3/6 GitHub par push kar raha hoon…". These lines are shown to the owner as live progress, so they always know what you're doing. Keep them brief.`,
     ``,
     `Stay invisible on the owner's PC (via pc_bash / pc_* tools):`,
     `- Run PC work in the background. Never open a terminal/console/PowerShell window (no Start-Process powershell/cmd, no "start", no new windows). Prefer CLI/APIs/headless over the screen.`,
@@ -48,32 +49,38 @@ function systemPrompt(): string {
   ].join("\n");
 }
 
-/** Friendly, spam-free description of the current step (for progress updates). */
+/** Specific-but-clean description of the current step (shown throttled, not per call). */
 function summarizeTool(name: string, input: Record<string, unknown>): string {
   const first = (k: string) => {
     const v = input[k];
-    return typeof v === "string" ? v.split("\n")[0].slice(0, 60) : "";
+    return typeof v === "string" ? v.split("\n")[0].trim().slice(0, 70) : "";
   };
+  const base = (p: string) => p.replace(/[\\/]+$/, "").split(/[\\/]/).pop() || p;
   switch (name) {
     case "Bash":
-      return "commands chala raha hoon";
+      return `$ ${first("command")}`;
     case "Read":
+      return `📖 ${base(first("file_path"))}`;
     case "Write":
+      return `✏️ ${base(first("file_path"))}`;
     case "Edit":
+      return `✏️ ${base(first("file_path"))}`;
     case "Glob":
     case "Grep":
-      return "files par kaam kar raha hoon";
+      return `🔎 ${first("pattern")}`;
     case "WebSearch":
-      return `web search: ${first("query")}`.trim();
+      return `🌐 search: ${first("query")}`;
     case "WebFetch":
-      return "web se padh raha hoon";
+      return `🌐 ${first("url")}`;
     case "Agent":
-      return "sub-task chala raha hoon";
+      return `🧩 ${first("description")}`;
     default: {
       const short = name.startsWith(`mcp__${TOOLS_SERVER_NAME}__`) ? name.slice(`mcp__${TOOLS_SERVER_NAME}__`.length) : name;
-      if (short.startsWith("pc_")) return "tumhare PC par kaam kar raha hoon";
-      if (short.startsWith("schedule") || short === "list_schedules" || short === "cancel_schedule") return "reminder set kar raha hoon";
-      return "kaam kar raha hoon";
+      if (short === "pc_bash") return `💻 PC$ ${first("command")}`;
+      if (short === "pc_screenshot") return "💻 PC screenshot le raha hoon";
+      if (short.startsWith("pc_")) return `💻 PC: ${short.slice(3)} ${first("path") || first("text")}`.trim();
+      if (short.startsWith("schedule") || short === "list_schedules" || short === "cancel_schedule") return "⏰ reminder set kar raha hoon";
+      return short;
     }
   }
 }

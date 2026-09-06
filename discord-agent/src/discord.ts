@@ -84,6 +84,10 @@ export function startDiscord() {
         onTool(summary) {
           activity = summary; // picked up by the heartbeat, not sent immediately
         },
+        onText(line) {
+          const t = line.split("\n").map((s) => s.trim()).filter(Boolean).pop();
+          if (t) activity = t.slice(0, 120); // the agent's own words = clearest progress
+        },
         async finalize(text, files) {
           done();
           const chunks = chunkMessage(text);
