@@ -14,7 +14,7 @@ import {
 } from "discord.js";
 import { config } from "./config.js";
 import { enqueueTurn, handleCommand, registerTransport, startScheduler, type Responder, type Transport } from "./core.js";
-import { chunkMessage, truncate } from "./discord-utils.js";
+import { chunkMessage, elapsed, truncate } from "./discord-utils.js";
 import { transcribeAudio } from "./transcribe.js";
 
 export function startDiscord() {
@@ -71,8 +71,7 @@ export function startDiscord() {
       let activity = "shuru kar raha hoon";
       // Light heartbeat: refresh a friendly progress line every 25s (no per-tool spam).
       const heartbeat = setInterval(() => {
-        const secs = Math.round((Date.now() - startedAt) / 1000);
-        status?.edit(truncate(`⏳ ${secs}s · ${activity}`, 1900)).catch(() => {});
+        status?.edit(truncate(`⏳ ${elapsed(startedAt)} · ${activity}`, 1900)).catch(() => {});
       }, 25000);
 
       const done = () => {

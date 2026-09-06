@@ -38,3 +38,12 @@ export function chunkMessage(text: string, limit = LIMIT): string[] {
 export function truncate(s: string, n: number): string {
   return s.length > n ? s.slice(0, n - 1) + "…" : s;
 }
+
+/** Human elapsed time: "45s", then "3m 20s" / "3m" after a minute. */
+export function elapsed(startMs: number): string {
+  const s = Math.round((Date.now() - startMs) / 1000);
+  if (s < 60) return `${s}s`;
+  const m = Math.floor(s / 60);
+  const r = s % 60;
+  return r ? `${m}m ${r}s` : `${m}m`;
+}

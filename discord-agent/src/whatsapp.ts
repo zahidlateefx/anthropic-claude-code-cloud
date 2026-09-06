@@ -12,7 +12,7 @@ import qrcode from "qrcode-terminal";
 import pino from "pino";
 import { config } from "./config.js";
 import { enqueueTurn, handleCommand, registerTransport, startScheduler, type Responder, type Transport } from "./core.js";
-import { chunkMessage } from "./discord-utils.js";
+import { chunkMessage, elapsed } from "./discord-utils.js";
 import { transcribeAudio } from "./transcribe.js";
 
 const logger = pino({ level: "silent" });
@@ -124,8 +124,7 @@ export function startWhatsApp() {
 
         // Light heartbeat: refresh a friendly progress line every 30s.
         const heartbeat = setInterval(() => {
-          const secs = Math.round((Date.now() - startedAt) / 1000);
-          void editStatus(`⏳ ${secs}s · ${activity}`);
+          void editStatus(`⏳ ${elapsed(startedAt)} · ${activity}`);
           void sock.sendPresenceUpdate("composing", jid).catch(() => {});
         }, 30000);
 
