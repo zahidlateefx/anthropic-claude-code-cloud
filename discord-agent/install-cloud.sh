@@ -13,6 +13,11 @@ BRANCH="claude/instagram-reel-discord-agent-ooifkn"
 DIR="$HOME/friday"
 PORT="${BRIDGE_PORT:-8787}"
 
+# Never let apt/needrestart pop an interactive dialog that hangs over SSH.
+export DEBIAN_FRONTEND=noninteractive
+export NEEDRESTART_MODE=a
+sudo mkdir -p /etc/needrestart/conf.d 2>/dev/null && echo '$nrconf{restart} = "a";' | sudo tee /etc/needrestart/conf.d/zzz-noprompt.conf >/dev/null 2>&1 || true
+
 say() { printf '\n\033[1;36m==> %s\033[0m\n' "$*"; }
 
 # --- packages --------------------------------------------------------------
