@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
-  Browsers,
   DisconnectReason,
   downloadMediaMessage,
   fetchLatestBaileysVersion,
@@ -54,7 +53,7 @@ export function startWhatsApp() {
       version,
       logger,
       auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, logger) },
-      browser: Browsers.ubuntu("Friday"),
+      browser: [config.agentName, "Chrome", "1.0"], // shown in WhatsApp > Linked Devices
       markOnlineOnConnect: false,
     });
 
