@@ -19,6 +19,10 @@ Phone (Discord DM) ──▶ Bot (this repo) ──▶ Claude Agent SDK ──�
 - **Reminders / recurring jobs**: "har subah 9 baje YouTube stats bhejo", "kal 5 baje yaad dilana" (bot restart ke baad bhi bache rehte hain)
 - **Screen control**: screenshot lekar click/type karna, un GUI apps ke liye jinka CLI nahi hai
 
+## Cloud 24/7 + PC worker
+
+Friday ko cloud par 24/7 chalana hai (PC off ho tab bhi, PC-tasks ke liye ek chhota worker PC par)? Dekho **[DEPLOY-CLOUD.md](DEPLOY-CLOUD.md)** (Oracle Free VM + PC worker).
+
 ## Fastest setup (one command)
 
 Discord token aur apna user ID (neeche step 1) hath mein rakho. Git installed ho (repo private hai, clone par GitHub login poochega).
@@ -144,5 +148,8 @@ src/discord-utils.ts 2000-char safe chunking
 src/scheduler.ts     cron + one-shot jobs (data/schedules.json)
 src/tools.ts         in-process MCP tools: schedule_*, screenshot, click, type...
 src/computer.ts      per-OS screen control (PowerShell / osascript+cliclick / xdotool)
+src/bridge.ts        cloud WebSocket server + callPC (PC bridge)
+src/pc-tools.ts      cloud agent tools that proxy to the PC worker
+src/worker.ts        PC worker entrypoint (runs on the owner's PC)
 AGENT.md             tumhari custom instructions
 ```

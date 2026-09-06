@@ -3,6 +3,7 @@ import { config } from "./config.js";
 import { startDiscord } from "./discord.js";
 import { startWhatsApp } from "./whatsapp.js";
 import { startScheduler } from "./core.js";
+import { startBridge } from "./bridge.js";
 
 // Keep the bot alive through transient library errors (e.g. Baileys' internal
 // 428 "Connection Closed" during message receipt). We log and carry on rather
@@ -15,6 +16,7 @@ console.log(
   `${config.agentName}: model=${config.model} permissions=${config.permissionMode} tz=${config.timezone} workspace=${config.workspace}`,
 );
 
+startBridge(); // no-op unless BRIDGE_TOKEN is set
 if (config.discord.enabled) startDiscord();
 if (config.whatsapp.enabled) startWhatsApp();
 

@@ -25,6 +25,7 @@ const digits = (s: string) => s.replace(/\D/g, "");
 const discordToken = process.env.DISCORD_TOKEN?.trim() || "";
 const discordOwners = new Set(list(process.env.DISCORD_OWNER_IDS));
 const waOwners = new Set(list(process.env.WHATSAPP_OWNER_NUMBERS).map(digits).filter(Boolean));
+const bridgeToken = process.env.BRIDGE_TOKEN?.trim() || "";
 
 export const config = {
   discord: {
@@ -36,6 +37,13 @@ export const config = {
   whatsapp: {
     enabled: waOwners.size > 0,
     owners: waOwners,
+  },
+  // PC bridge: enabled on the cloud host when BRIDGE_TOKEN is set. The PC worker
+  // dials in with the same token; the agent then gets pc_* tools.
+  bridge: {
+    enabled: Boolean(bridgeToken),
+    port: Number(process.env.BRIDGE_PORT || 8787),
+    token: bridgeToken,
   },
   model: process.env.AGENT_MODEL || "claude-opus-5",
   workspace: path.resolve(process.env.AGENT_WORKSPACE || "./workspace"),

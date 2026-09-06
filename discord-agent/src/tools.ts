@@ -2,7 +2,7 @@ import { createSdkMcpServer, tool } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
 import { config } from "./config.js";
 import { scheduler, nowLocal } from "./scheduler.js";
-import * as computer from "./computer.js";
+import { pcTools } from "./pc-tools.js";
 
 export const TOOLS_SERVER_NAME = "friday";
 
@@ -21,7 +21,7 @@ export function buildToolsServer(channelId: string) {
     instructions: [
       `Scheduling: times are in ${config.timezone}. Now: ${nowLocal()}.`,
       `A scheduled job runs the given prompt as if the owner sent it in this chat, and the reply is posted here.`,
-      `Screen control: call screenshot first, then click/type using coordinates from that screenshot. Take a new screenshot after each action to verify.`,
+      `The owner's PC: use pc_* tools (pc_bash, pc_screenshot, pc_click, pc_type, ...). For screen work, pc_screenshot first, then click/type by those coordinates, then screenshot again to verify. If a pc_ tool says the PC is offline, tell the owner their PC is not connected and offer to do it when it's back — do not retry in a loop.`,
     ].join("\n"),
     tools: [
       tool(
@@ -68,82 +68,7 @@ export function buildToolsServer(channelId: string) {
         text(scheduler.remove(id) ? `Cancelled ${id}` : `No job ${id}`),
       ),
 
-      tool("screenshot", "Capture the screen. Returns an image; use its pixel coordinates for click/move/scroll.", {}, async () => {
-        try {
-          const s = await computer.screenshot();
-          return {
-            content: [
-              { type: "image" as const, data: s.png.toString("base64"), mimeType: "image/png" },
-              { type: "text" as const, text: `Screenshot ${s.width}x${s.height} (screen ${s.realWidth}x${s.realHeight}). Use screenshot coordinates.` },
-            ],
-          };
-        } catch (err) {
-          return fail(err);
-        }
-      }),
-      tool(
-        "click",
-        "Click at screenshot coordinates.",
-        {
-          x: z.number(),
-          y: z.number(),
-          button: z.enum(["left", "right", "middle"]).default("left"),
-          double: z.boolean().default(false),
-        },
-        async ({ x, y, button, double }) => {
-          try {
-            await computer.click(x, y, button, double);
-            return text(`Clicked ${button}${double ? " (double)" : ""} at ${x},${y}`);
-          } catch (err) {
-            return fail(err);
-          }
-        },
-      ),
-      tool("move_mouse", "Move the mouse to screenshot coordinates.", { x: z.number(), y: z.number() }, async ({ x, y }) => {
-        try {
-          await computer.moveMouse(x, y);
-          return text(`Moved to ${x},${y}`);
-        } catch (err) {
-          return fail(err);
-        }
-      }),
-      tool(
-        "scroll",
-        "Scroll at screenshot coordinates. amount > 0 scrolls down, < 0 up (in notches).",
-        { x: z.number(), y: z.number(), amount: z.number().int() },
-        async ({ x, y, amount }) => {
-          try {
-            await computer.scroll(x, y, amount);
-            return text(`Scrolled ${amount} at ${x},${y}`);
-          } catch (err) {
-            return fail(err);
-          }
-        },
-      ),
-      tool("type_text", "Type text into the focused element (click it first).", { text: z.string() }, async ({ text: t }) => {
-        try {
-          await computer.typeText(t);
-          return text(`Typed ${t.length} chars`);
-        } catch (err) {
-          return fail(err);
-        }
-      }),
-      tool(
-        "press_key",
-        "Press a key with optional modifiers. key: enter, tab, esc, backspace, delete, up/down/left/right, home, end, pageup, pagedown, f1-f12, space, or a single character.",
-        {
-          key: z.string(),
-          modifiers: z.array(z.enum(["ctrl", "alt", "shift", "cmd", "win"])).default([]),
-        },
-        async ({ key, modifiers }) => {
-          try {
-            await computer.pressKey(key, modifiers);
-            return text(`Pressed ${[...modifiers, key].join("+")}`);
-          } catch (err) {
-            return fail(err);
-          }
-        },
-      ),
+      ...pcTools(),
     ],
   });
 }

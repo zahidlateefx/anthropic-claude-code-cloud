@@ -8,7 +8,9 @@
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "worker": "node dist/worker.js",
+    "worker:dev": "tsx src/worker.ts"
   },
   "engines": {
     "node": ">=20"
@@ -21,10 +23,12 @@
     "dotenv": "^17.2.3",
     "pino": "^10.3.1",
     "qrcode-terminal": "^0.12.0",
+    "ws": "^8.21.3",
     "zod": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^22.18.0",
+    "@types/ws": "^8.18.1",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   }
