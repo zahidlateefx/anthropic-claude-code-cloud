@@ -43,11 +43,21 @@ function shouldHandle(msg: Message): boolean {
   if (!config.ownerIds.has(msg.author.id)) return false;
   const isDM = msg.channel.type === ChannelType.DM;
   if (config.channelIds.size > 0) return isDM || config.channelIds.has(msg.channelId);
-  return isDM || msg.mentions.has(client.user!);
+  return isDM || msg.mentions.has(client.user!) || startsWithName(msg.content);
+}
+
+const namePrefix = () => new RegExp(`^\\s*${config.agentName}\\b[,:!\\s]*`, "i");
+
+/** "Friday, do X" in a server channel counts as addressing the bot. */
+function startsWithName(content: string): boolean {
+  return namePrefix().test(content);
 }
 
 function cleanContent(msg: Message): string {
-  return msg.content.replace(new RegExp(`<@!?${client.user!.id}>`, "g"), "").trim();
+  return msg.content
+    .replace(new RegExp(`<@!?${client.user!.id}>`, "g"), "")
+    .replace(namePrefix(), "")
+    .trim();
 }
 
 async function downloadAttachments(msg: Message): Promise<string[]> {
