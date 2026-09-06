@@ -16,6 +16,8 @@ Phone (Discord DM) ──▶ Bot (this repo) ──▶ Claude Agent SDK ──�
 - Tumhare bheje files (screenshots, PDFs, CSV) padhna (auto-saved to `workspace/inbox/`)
 - Koi bhi command jo tum khud terminal mein chalate — wo bhi
 - Har chat ki apni memory (session) hai, restart ke baad bhi yaad rehta hai
+- **Reminders / recurring jobs**: "har subah 9 baje YouTube stats bhejo", "kal 5 baje yaad dilana" (bot restart ke baad bhi bache rehte hain)
+- **Screen control**: screenshot lekar click/type karna, un GUI apps ke liye jinka CLI nahi hai
 
 ## Fastest setup (one command)
 
@@ -74,6 +76,7 @@ Laptop band ho to bot band. Hamesha on chahiye to ek sasta VPS (Hetzner/DigitalO
 | kuch bhi likho | task run hota hai, status message update hota rehta hai |
 | `!reset` | nayi session, purana context clear |
 | `!stop` | chal raha task rok do |
+| `!schedules` | reminders / recurring jobs ki list |
 | `!status` | model, permission mode, session id |
 | `!help` | ye list |
 
@@ -88,8 +91,21 @@ Server channels mein bot ko `@mention` karna padta hai; DM mein direct likho.
 | `AGENT_MODEL` | `claude-opus-5` | `claude-sonnet-5` sasta/tez, `claude-fable-5-1` sabse smart |
 | `AGENT_WORKSPACE` | `./workspace` | Agent yahan kaam karta hai |
 | `AGENT_MAX_TURNS` | `80` | Ek request mein max tool calls |
+| `AGENT_TIMEZONE` | system tz | Reminders/cron ke liye, e.g. `Asia/Karachi` |
 
 `AGENT.md` edit karke agent ko apne baare mein, apne projects, aur rules batao (system prompt mein append hota hai).
+
+## Screen control (computer use) — prerequisites
+
+Agent `screenshot`, `click`, `type_text`, `press_key`, `scroll` tools se screen chala sakta hai. Bot us user session mein chalna chahiye jiski screen dikh rahi ho (locked screen par kaam nahi karega).
+
+| OS | Install |
+|---|---|
+| Windows | kuch nahi (PowerShell built-in) |
+| macOS | `brew install cliclick`; phir System Settings → Privacy & Security → **Screen Recording** aur **Accessibility** mein Terminal/node ko allow karo |
+| Linux (X11) | `sudo apt install xdotool imagemagick` |
+
+Screenshots 1568px tak chhote karke model ko diye jate hain; coordinates bot khud map karta hai.
 
 ## Security — zaroor padho
 
@@ -109,5 +125,8 @@ src/index.ts         Discord client, queue per channel, attachments, status edit
 src/agent.ts         Claude Agent SDK query(), tool progress, outbox
 src/sessions.ts      channel → session id (data/sessions.json)
 src/discord-utils.ts 2000-char safe chunking
+src/scheduler.ts     cron + one-shot jobs (data/schedules.json)
+src/tools.ts         in-process MCP tools: schedule_*, screenshot, click, type...
+src/computer.ts      per-OS screen control (PowerShell / osascript+cliclick / xdotool)
 AGENT.md             tumhari custom instructions
 ```

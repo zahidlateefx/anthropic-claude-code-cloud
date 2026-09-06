@@ -34,6 +34,7 @@ export const config = {
   permissionMode: permissionMode(process.env.AGENT_PERMISSION_MODE),
   maxTurns: Number(process.env.AGENT_MAX_TURNS || 80),
   agentName: process.env.AGENT_NAME || "Friday",
+  timezone: process.env.AGENT_TIMEZONE || Intl.DateTimeFormat().resolvedOptions().timeZone,
   dataDir: path.resolve("./data"),
 };
 

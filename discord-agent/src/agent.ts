@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { query, type Options, type Query, type SDKMessage } from "@anthropic-ai/claude-agent-sdk";
 import { config } from "./config.js";
+import { buildToolsServer, TOOLS_SERVER_NAME } from "./tools.js";
 
 export interface AgentEvents {
   /** Called whenever the agent starts using a tool (for "typing..." style status). */
@@ -35,6 +36,10 @@ function systemPrompt(): string {
     `- If a task is ambiguous, ask ONE short clarifying question instead of guessing wildly. If it is clear, just do it and report the result.`,
     `- Long tasks are fine. Work through them fully, then summarize what you did and where the output is.`,
     ``,
+    `Extra tools (MCP server "${TOOLS_SERVER_NAME}"):`,
+    `- schedule_task / schedule_once / list_schedules / cancel_schedule: reminders and recurring jobs ("every morning at 9 send me YouTube stats"). Timezone: ${config.timezone}.`,
+    `- screenshot / click / move_mouse / scroll / type_text / press_key: control the screen for GUI apps that have no CLI. Prefer shell commands and APIs when they exist; use the screen only when needed. Always screenshot before and after acting.`,
+    ``,
     custom,
   ].join("\n");
 }
@@ -61,6 +66,14 @@ function summarizeTool(name: string, input: Record<string, unknown>): string {
     case "Agent":
       return `Subagent: ${first("description")}`;
     default:
+      if (name.startsWith(`mcp__${TOOLS_SERVER_NAME}__`)) {
+        const short = name.slice(`mcp__${TOOLS_SERVER_NAME}__`.length);
+        const args = Object.entries(input)
+          .filter(([, v]) => typeof v === "string" || typeof v === "number")
+          .map(([k, v]) => `${k}=${String(v).split("\n")[0].slice(0, 40)}`)
+          .join(" ");
+        return `${short} ${args}`.trim();
+      }
       return name;
   }
 }
@@ -99,6 +112,9 @@ export async function runAgent(
     systemPrompt: { type: "preset", preset: "claude_code", append: systemPrompt() },
     settingSources: ["user", "project"],
     resume: resumeSessionId,
+    mcpServers: { [TOOLS_SERVER_NAME]: buildToolsServer(channelId) },
+    // Our own tools never need a permission prompt, whatever the mode.
+    allowedTools: [`mcp__${TOOLS_SERVER_NAME}`],
   };
 
   const q = query({ prompt, options });
