@@ -33,7 +33,7 @@ export const config = {
   workspace: path.resolve(process.env.AGENT_WORKSPACE || "./workspace"),
   permissionMode: permissionMode(process.env.AGENT_PERMISSION_MODE),
   maxTurns: Number(process.env.AGENT_MAX_TURNS || 80),
-  agentName: process.env.AGENT_NAME || "Thor",
+  agentName: process.env.AGENT_NAME || "Friday",
   dataDir: path.resolve("./data"),
 };
 

@@ -1,6 +1,6 @@
 # Discord Claude Agent
 
-Apna personal AI agent jo tum Discord se (phone se bhi) control karte ho. Wahi setup jo reel mein "Thor" tha: Discord bot → tumhare computer par chalta hua full Claude Code agent (shell, files, web search, git/GitHub, jo bhi CLI installed hai).
+Apna personal AI agent jo tum Discord se (phone se bhi) control karte ho. Wahi setup jo reel mein tha (unka "Thor", tumhara "Friday"): Discord bot → tumhare computer par chalta hua full Claude Code agent (shell, files, web search, git/GitHub, jo bhi CLI installed hai).
 
 ```
 Phone (Discord DM) ──▶ Bot (this repo) ──▶ Claude Agent SDK ──▶ tumhara laptop/server
@@ -20,7 +20,7 @@ Phone (Discord DM) ──▶ Bot (this repo) ──▶ Claude Agent SDK ──�
 ## Setup (10 min)
 
 ### 1. Discord bot banao
-1. https://discord.com/developers/applications → **New Application** → naam do (e.g. Thor)
+1. https://discord.com/developers/applications → **New Application** → naam do (e.g. Friday)
 2. **Bot** tab → **Reset Token** → token copy karo
 3. Isi tab par **Privileged Gateway Intents** mein **Message Content Intent** ON karo
 4. **OAuth2 → URL Generator**: scopes `bot`, permissions `Send Messages`, `Read Message History`, `Attach Files`, `Add Reactions` → URL open karke apne server mein add karo
@@ -39,12 +39,12 @@ npm install
 npm run build
 npm start
 ```
-Console mein `✅ Thor online` aaye to Discord par bot ko DM karo.
+Console mein `✅ Friday online` aaye to Discord par bot ko DM karo.
 
 ### 4. 24/7 chalana (optional)
 ```bash
 npm i -g pm2
-pm2 start dist/index.js --name thor
+pm2 start dist/index.js --name friday
 pm2 save && pm2 startup
 ```
 Laptop band ho to bot band. Hamesha on chahiye to ek sasta VPS (Hetzner/DigitalOcean $5) ya ghar ka purana PC/Raspberry Pi use karo.
