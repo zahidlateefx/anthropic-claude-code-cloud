@@ -49,38 +49,40 @@ function systemPrompt(): string {
   ].join("\n");
 }
 
-/** Specific-but-clean description of the current step (shown throttled, not per call). */
+/**
+ * Clean, human progress line — NO raw shell commands (those look ugly/scary).
+ * The agent's own narration (onText) provides the real specifics; this is the
+ * fallback shown when it hasn't said anything recently.
+ */
 function summarizeTool(name: string, input: Record<string, unknown>): string {
   const first = (k: string) => {
     const v = input[k];
-    return typeof v === "string" ? v.split("\n")[0].trim().slice(0, 70) : "";
+    return typeof v === "string" ? v.split("\n")[0].trim().slice(0, 60) : "";
   };
   const base = (p: string) => p.replace(/[\\/]+$/, "").split(/[\\/]/).pop() || p;
   switch (name) {
     case "Bash":
-      return `$ ${first("command")}`;
+      return "⚙️ kaam kar raha hoon…";
     case "Read":
-      return `📖 ${base(first("file_path"))}`;
+      return `📖 ${base(first("file_path"))} padh raha hoon`;
     case "Write":
-      return `✏️ ${base(first("file_path"))}`;
     case "Edit":
-      return `✏️ ${base(first("file_path"))}`;
+      return `✏️ ${base(first("file_path"))} likh raha hoon`;
     case "Glob":
     case "Grep":
-      return `🔎 ${first("pattern")}`;
+      return "🔎 dhoond raha hoon…";
     case "WebSearch":
       return `🌐 search: ${first("query")}`;
     case "WebFetch":
-      return `🌐 ${first("url")}`;
+      return "🌐 web se padh raha hoon…";
     case "Agent":
-      return `🧩 ${first("description")}`;
+      return "🧩 sub-task chala raha hoon…";
     default: {
       const short = name.startsWith(`mcp__${TOOLS_SERVER_NAME}__`) ? name.slice(`mcp__${TOOLS_SERVER_NAME}__`.length) : name;
-      if (short === "pc_bash") return `💻 PC$ ${first("command")}`;
-      if (short === "pc_screenshot") return "💻 PC screenshot le raha hoon";
-      if (short.startsWith("pc_")) return `💻 PC: ${short.slice(3)} ${first("path") || first("text")}`.trim();
-      if (short.startsWith("schedule") || short === "list_schedules" || short === "cancel_schedule") return "⏰ reminder set kar raha hoon";
-      return short;
+      if (short === "pc_screenshot") return "💻 screen dekh raha hoon…";
+      if (short.startsWith("pc_")) return "💻 tumhare PC par kaam kar raha hoon…";
+      if (short.startsWith("schedule") || short === "list_schedules" || short === "cancel_schedule") return "⏰ reminder set kar raha hoon…";
+      return "⚙️ kaam kar raha hoon…";
     }
   }
 }
