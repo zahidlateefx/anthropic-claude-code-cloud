@@ -150,23 +150,25 @@ export function startWhatsApp() {
 
     const debug = process.env.WA_DEBUG === "1";
     sock.ev.on("messages.upsert", async (up: any) => {
-      if (debug) console.log(`WA upsert type=${up.type} n=${up.messages?.length} self=${digits(sock.user?.id ?? "")}`);
       if (up.type !== "notify") return;
+      // The owner's own account, both as a phone number (PN) and a hidden LID.
+      const selfNums = [sock.user?.id, (sock.user as any)?.lid].filter(Boolean).map(digits);
       const selfNum = digits(sock.user?.id ?? "");
       for (const msg of up.messages) {
         if (debug)
-          console.log(`WA msg fromMe=${msg.key.fromMe} jid=${msg.key.remoteJid} id=${msg.key.id} text=${JSON.stringify(extractText(msg).slice(0, 60))}`);
+          console.log(`WA msg fromMe=${msg.key.fromMe} jid=${msg.key.remoteJid} self=${selfNums.join("/")} text=${JSON.stringify(extractText(msg).slice(0, 40))}`);
         if (!msg.message) continue;
         if (msg.key.id && sentIds.has(msg.key.id)) continue; // our own reply
         const jid: string = msg.key.remoteJid ?? "";
         if (jid.endsWith("@g.us") || jid === "status@broadcast") continue; // 1:1 chats only
 
         // Authorize. The bot runs on the owner's own WhatsApp, so the owner
-        // commands it from the self-chat (messages there are `fromMe`).
-        const isSelfChat = digits(jid) === selfNum;
+        // commands it from the self-chat (messages there are `fromMe`, and the
+        // chat id may be a phone number OR a hidden @lid).
+        const isSelfChat = selfNums.includes(digits(jid));
         if (msg.key.fromMe) {
-          if (!isSelfChat || !config.whatsapp.owners.has(selfNum)) {
-            if (debug) console.log(`WA skip fromMe: isSelfChat=${isSelfChat} ownerHasSelf=${config.whatsapp.owners.has(selfNum)}`);
+          if (!isSelfChat) {
+            if (debug) console.log(`WA skip fromMe: not self-chat (jid ${digits(jid)})`);
             continue;
           }
         } else {
