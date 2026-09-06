@@ -23,15 +23,16 @@ let origin = { x: 0, y: 0 }; // virtual-screen offset (multi-monitor on Windows)
 
 async function ps(script: string): Promise<string> {
   const encoded = Buffer.from(script, "utf16le").toString("base64");
-  const { stdout } = await exec("powershell", ["-NoProfile", "-NonInteractive", "-EncodedCommand", encoded], {
+  const { stdout } = await exec("powershell", ["-NoProfile", "-NonInteractive", "-WindowStyle", "Hidden", "-EncodedCommand", encoded], {
     maxBuffer: 64 * 1024 * 1024,
+    windowsHide: true, // never flash a console window on the owner's screen
   });
   return stdout.trim();
 }
 
 async function run(cmd: string, args: string[]): Promise<string> {
   try {
-    const { stdout } = await exec(cmd, args, { maxBuffer: 64 * 1024 * 1024 });
+    const { stdout } = await exec(cmd, args, { maxBuffer: 64 * 1024 * 1024, windowsHide: true });
     return stdout.trim();
   } catch (err) {
     const e = err as NodeJS.ErrnoException;
