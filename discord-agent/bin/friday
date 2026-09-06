@@ -12,6 +12,12 @@ case "${1:-help}" in
   start)         pm2 start friday 2>/dev/null || pm2 start dist/index.js --name friday --time ;;
   update|up)     git pull && npm install && npm run build && pm2 restart friday --update-env && echo "✅ updated" ;;
   token|login)   claude setup-token ;;
+  voice)
+    echo "Installing voice transcription (faster-whisper)…"
+    sudo apt-get install -y python3-pip ffmpeg >/dev/null 2>&1 || true
+    pip3 install --user --break-system-packages faster-whisper 2>&1 | tail -3 || pip3 install --user faster-whisper 2>&1 | tail -3
+    echo "✅ Voice ready. Pehli voice note par model (~150MB) download hoga."
+    ;;
   edit|agent)    "${EDITOR:-nano}" AGENT.md ;;
   qr)            pm2 logs friday --lines 60 --nostream ;;
   help|*)
@@ -22,6 +28,7 @@ friday commands:
   friday restart   # dobara chalu karo
   friday update    # latest code le kar restart
   friday token     # naya 1-saal Claude token (setup-token)
+  friday voice     # voice-note transcription install (ek baar)
   friday edit      # AGENT.md kholo (apne rules/projects)
   friday qr        # WhatsApp QR / recent logs
   friday stop      # bot band

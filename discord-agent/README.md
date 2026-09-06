@@ -112,6 +112,14 @@ WhatsApp chalane ke liye `.env` mein `WHATSAPP_OWNER_NUMBERS` set karo (Discord 
 - Session `data/wa-auth/` mein save hota hai, restart ke baad dobara scan nahi karna.
 - File bhejo to `workspace/inbox/` mein save hoti hai; Friday jo file bheje wo attach ho jati hai.
 
+## Voice notes
+
+WhatsApp/Discord par voice note bhejo, Friday use sun kar (local Whisper se transcribe karke) kaam karta hai. Ek baar VM par install:
+```bash
+friday voice
+```
+Pehli voice note par model (~150MB) download hota hai (ek baar). Roman Urdu/English dono chalte hain.
+
 ## Screen control (computer use) — prerequisites
 
 Agent `screenshot`, `click`, `type_text`, `press_key`, `scroll` tools se screen chala sakta hai. Bot us user session mein chalna chahiye jiski screen dikh rahi ho (locked screen par kaam nahi karega).

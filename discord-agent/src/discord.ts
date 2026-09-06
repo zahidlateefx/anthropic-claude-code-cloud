@@ -15,6 +15,7 @@ import {
 import { config } from "./config.js";
 import { enqueueTurn, handleCommand, registerTransport, startScheduler, type Responder, type Transport } from "./core.js";
 import { chunkMessage, truncate } from "./discord-utils.js";
+import { transcribeAudio } from "./transcribe.js";
 
 export function startDiscord() {
   const client = new Client({
@@ -120,6 +121,21 @@ export function startDiscord() {
     }
     if (!text && msg.attachments.size === 0) return;
     const files = await downloadAttachments(msg);
+
+    // Transcribe voice messages / audio attachments and use them as the message.
+    const audio = files.find((f) => /\.(ogg|oga|opus|mp3|m4a|wav|webm|aac|flac)$/i.test(f));
+    if (audio) {
+      const t = await transcribeAudio(audio);
+      if (t.missing) {
+        await msg.reply("🎙️ Voice transcription set nahi. VM par `friday voice` chala do.").catch(() => {});
+        return;
+      }
+      if (t.text) {
+        enqueueTurn(convId, text ? `${text}\n\n[Voice note]: ${t.text}` : t.text);
+        return;
+      }
+    }
+
     const prompt = files.length > 0 ? `${text}\n\n[Attached files saved to: ${files.join(", ")}]` : text;
     enqueueTurn(convId, prompt);
   });

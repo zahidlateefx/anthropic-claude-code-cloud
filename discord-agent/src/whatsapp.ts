@@ -13,6 +13,7 @@ import pino from "pino";
 import { config } from "./config.js";
 import { enqueueTurn, handleCommand, registerTransport, startScheduler, type Responder, type Transport } from "./core.js";
 import { chunkMessage } from "./discord-utils.js";
+import { transcribeAudio } from "./transcribe.js";
 
 const logger = pino({ level: "silent" });
 const WA_LIMIT = 4000; // keep WhatsApp messages readable
@@ -193,6 +194,24 @@ export function startWhatsApp() {
           continue;
         }
         const files = await saveMedia(msg);
+
+        // Voice notes: transcribe locally, then treat the transcript as the message.
+        if (mediaKind(msg) === "audio" && files.length > 0) {
+          await sock.sendPresenceUpdate("composing", jid).catch(() => {});
+          const t = await transcribeAudio(files[0]);
+          if (t.missing) {
+            await waSend(jid, { text: "🎙️ Voice transcription abhi set nahi. VM par `friday voice` chala do (ek baar), phir voice notes chalenge. Filhaal likh kar bhejo." });
+            continue;
+          }
+          if (!t.text) {
+            await waSend(jid, { text: "🎙️ Voice note samajh nahi aaya (khali/na-saaf). Dobara ya likh kar bhejo." });
+            continue;
+          }
+          const prompt = text ? `${text}\n\n[Voice note]: ${t.text}` : t.text;
+          enqueueTurn(convId, prompt);
+          continue;
+        }
+
         if (!text && files.length === 0) continue;
         const prompt = files.length > 0 ? `${text}\n\n[Attached files saved to: ${files.join(", ")}]` : text;
         enqueueTurn(convId, prompt);
