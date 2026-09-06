@@ -3,6 +3,7 @@ import { config } from "./config.js";
 import { sessions } from "./sessions.js";
 import { drainOutbox, isRunning, runAgent, stopAgent } from "./agent.js";
 import { scheduler, nowLocal } from "./scheduler.js";
+import { reloginActive, startRelogin, submitCode } from "./relogin.js";
 
 /**
  * A conversation is addressed as "<transport>:<rawId>" (e.g. "discord:123",
@@ -78,7 +79,33 @@ export function startScheduler() {
  * text is not a command (and should go to the agent).
  */
 export async function handleCommand(convId: string, text: string): Promise<string | null> {
-  const cmd = text.trim().toLowerCase();
+  const raw = text.trim();
+  const cmd = raw.toLowerCase();
+
+  // Claude re-login from the phone (no SSH). !relogin -> URL; then the code.
+  if (cmd === "!relogin" || cmd === "!login") {
+    try {
+      const url = await startRelogin();
+      return [
+        "🔐 Claude re-login (1-year token):",
+        "1) Is link ko kholo, sign in aur authorize karo:",
+        url,
+        "2) Jo code dikhe wo yahin bhej do (paste kar do, ya `!code <code>`).",
+      ].join("\n");
+    } catch (err) {
+      return `Re-login start nahi hua: ${err instanceof Error ? err.message : String(err)}`;
+    }
+  }
+  if (reloginActive() && (cmd.startsWith("!code ") || !raw.startsWith("!"))) {
+    const code = raw.replace(/^!code\s+/i, "").trim();
+    try {
+      const ok = await submitCode(code);
+      return ok ? "✅ Re-login done. Naya 1-saal token save ho gaya. Ab apna kaam dobara bolo." : "❌ Code reject hua. Dobara `!relogin` bhejo.";
+    } catch (err) {
+      return `Code submit fail: ${err instanceof Error ? err.message : String(err)}`;
+    }
+  }
+
   if (cmd === "!reset" || cmd === "!new") {
     sessions.clear(convId);
     return "🧹 Fresh session. Previous context cleared.";
@@ -107,6 +134,7 @@ export async function handleCommand(convId: string, text: string): Promise<strin
       `!reset – start a fresh session`,
       `!stop – interrupt the running task`,
       `!schedules – list reminders / recurring jobs`,
+      `!relogin – Claude session expire ho to phone se dobara login`,
       `!status – show config/session`,
       `Attach files and I'll save them to the workspace inbox.`,
     ].join("\n");
