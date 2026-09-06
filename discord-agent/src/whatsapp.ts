@@ -98,17 +98,27 @@ export function startWhatsApp() {
       }
     }
 
+    // IDs of messages this bot sent, so its own replies (which are `fromMe`
+    // in the owner's self-chat) never get re-processed as new commands.
+    const sentIds = new Set<string>();
+    async function waSend(jid: string, content: any): Promise<any> {
+      const r = await sock.sendMessage(jid, content).catch(() => null);
+      if (r?.key?.id) {
+        sentIds.add(r.key.id);
+        if (sentIds.size > 500) sentIds.clear();
+      }
+      return r;
+    }
+
     const transport: Transport = {
       prefix: "whatsapp",
       async openResponder(jid): Promise<Responder | null> {
         await sock.sendPresenceUpdate("composing", jid).catch(() => {});
-        const status = await sock.sendMessage(jid, { text: "💭 Working…" }).catch(() => null);
+        const status = await waSend(jid, { text: "💭 Working…" });
         let lastEdit = 0;
 
-        const editStatus = (text: string) => {
-          if (status) return sock.sendMessage(jid, { text, edit: status.key }).catch(() => {});
-          return sock.sendMessage(jid, { text }).catch(() => {});
-        };
+        const editStatus = (text: string) =>
+          status ? waSend(jid, { text, edit: status.key }) : waSend(jid, { text });
 
         return {
           onTool(summary) {
@@ -121,14 +131,12 @@ export function startWhatsApp() {
           async finalize(text, files) {
             const chunks = chunkMessage(text, WA_LIMIT);
             await editStatus(chunks[0]);
-            for (const c of chunks.slice(1)) await sock.sendMessage(jid, { text: c }).catch(() => {});
+            for (const c of chunks.slice(1)) await waSend(jid, { text: c });
             for (const p of files) {
               const buf = fs.readFileSync(p);
               const base = path.basename(p);
               const isImg = /\.(png|jpe?g|gif|webp)$/i.test(base);
-              await sock
-                .sendMessage(jid, isImg ? { image: buf } : { document: buf, fileName: base, mimetype: "application/octet-stream" })
-                .catch(() => {});
+              await waSend(jid, isImg ? { image: buf } : { document: buf, fileName: base, mimetype: "application/octet-stream" });
             }
             await sock.sendPresenceUpdate("paused", jid).catch(() => {});
           },
@@ -142,17 +150,27 @@ export function startWhatsApp() {
 
     sock.ev.on("messages.upsert", async (up: any) => {
       if (up.type !== "notify") return;
+      const selfNum = digits(sock.user?.id ?? "");
       for (const msg of up.messages) {
-        if (msg.key.fromMe || !msg.message) continue;
+        if (!msg.message) continue;
+        if (msg.key.id && sentIds.has(msg.key.id)) continue; // our own reply
         const jid: string = msg.key.remoteJid ?? "";
         if (jid.endsWith("@g.us") || jid === "status@broadcast") continue; // 1:1 chats only
-        if (!config.whatsapp.owners.has(digits(jid))) continue;
+
+        // Authorize. The bot runs on the owner's own WhatsApp, so the owner
+        // commands it from the self-chat (messages there are `fromMe`).
+        const isSelfChat = digits(jid) === selfNum;
+        if (msg.key.fromMe) {
+          if (!isSelfChat || !config.whatsapp.owners.has(selfNum)) continue;
+        } else {
+          if (!config.whatsapp.owners.has(digits(jid))) continue;
+        }
 
         const text = extractText(msg).trim();
         const convId = `whatsapp:${jid}`;
         const reply = await handleCommand(convId, text);
         if (reply !== null) {
-          await sock.sendMessage(jid, { text: reply }).catch(() => {});
+          await waSend(jid, { text: reply });
           continue;
         }
         const files = await saveMedia(msg);
