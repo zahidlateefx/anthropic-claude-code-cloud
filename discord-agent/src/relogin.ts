@@ -71,7 +71,15 @@ function endSession() {
 export async function startRelogin(): Promise<string> {
   endSession();
   const pty = await loadPty();
-  const p: IPty = pty.spawn("claude", ["setup-token"], { name: "xterm-color", cols: 1000, rows: 50, env: process.env });
+  // Run a FRESH interactive login: strip any existing credentials from the
+  // child env so setup-token always does the browser flow (otherwise it may
+  // reuse/short-circuit with the token we already have and never mint a new one).
+  const childEnv: Record<string, string> = {};
+  for (const [k, v] of Object.entries(process.env)) {
+    if (k === "CLAUDE_CODE_OAUTH_TOKEN" || k === "ANTHROPIC_API_KEY" || k === "ANTHROPIC_AUTH_TOKEN") continue;
+    if (typeof v === "string") childEnv[k] = v;
+  }
+  const p: IPty = pty.spawn("claude", ["setup-token"], { name: "xterm-color", cols: 1000, rows: 50, env: childEnv });
   session = { pty: p, startedAt: Date.now() };
   const mine = session;
 
