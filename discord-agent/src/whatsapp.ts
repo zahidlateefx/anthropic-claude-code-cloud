@@ -1,11 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
-import baileys, {
+import {
   Browsers,
   DisconnectReason,
   downloadMediaMessage,
   fetchLatestBaileysVersion,
   makeCacheableSignalKeyStore,
+  makeWASocket,
   useMultiFileAuthState,
 } from "@whiskeysockets/baileys";
 import qrcode from "qrcode-terminal";
@@ -14,7 +15,6 @@ import { config } from "./config.js";
 import { enqueueTurn, handleCommand, registerTransport, startScheduler, type Responder, type Transport } from "./core.js";
 import { chunkMessage } from "./discord-utils.js";
 
-const makeWASocket = (baileys as unknown as { default: typeof import("@whiskeysockets/baileys").default }).default;
 const logger = pino({ level: "silent" });
 const WA_LIMIT = 4000; // keep WhatsApp messages readable
 
