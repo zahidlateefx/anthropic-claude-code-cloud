@@ -99,6 +99,15 @@ export async function startRelogin(): Promise<string> {
 export interface ReloginResult {
   ok: boolean;
   tokenSaved: boolean;
+  detail?: string;
+}
+
+/** A user may paste the whole callback URL/line; pull out the bare code. */
+function cleanCode(raw: string): string {
+  let c = raw.trim();
+  const m = c.match(/[?&]code=([^&\s]+)/);
+  if (m) c = decodeURIComponent(m[1]);
+  return c.replace(/\s+/g, "");
 }
 
 /** Feed the authorization code back and capture + persist the long-lived token. */
@@ -108,6 +117,7 @@ export async function submitCode(code: string): Promise<ReloginResult> {
   return new Promise((resolve) => {
     let buf = "";
     let settled = false;
+    const tail = () => stripAnsi(buf).replace(TOKEN_RE, "«token»").replace(/\s+/g, " ").trim().slice(-220);
     const tryToken = (): boolean => {
       const m = stripAnsi(buf).match(TOKEN_RE);
       if (m) {
@@ -126,18 +136,19 @@ export async function submitCode(code: string): Promise<ReloginResult> {
         /* noop */
       }
       endSession();
-      resolve({ ok, tokenSaved });
+      resolve({ ok, tokenSaved, detail: ok ? undefined : tail() });
     };
     const sub = s.pty.onData((d) => {
       buf += d;
       if (tryToken()) finish(true, true);
-      else if (/invalid|incorrect|denied|error|failed|expired/i.test(stripAnsi(buf))) finish(false, false);
+      // Only fail fast on an explicit rejection phrase (avoid matching stray "error").
+      else if (/invalid code|incorrect code|not valid|authentication failed|authorization failed|invalid_grant/i.test(stripAnsi(buf))) finish(false, false);
     });
     s.pty.onExit(({ exitCode }) => {
       if (tryToken()) finish(true, true);
-      else finish(exitCode === 0, false); // exited cleanly but no token captured
+      else finish(false, false); // exited without printing a token
     });
-    const to = setTimeout(() => finish(tryToken(), false), 60000);
-    s.pty.write(code.trim() + "\r");
+    const to = setTimeout(() => finish(tryToken(), false), 90000);
+    s.pty.write(cleanCode(code) + "\r");
   });
 }
