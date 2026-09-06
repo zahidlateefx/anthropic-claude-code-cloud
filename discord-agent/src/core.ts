@@ -99,8 +99,10 @@ export async function handleCommand(convId: string, text: string): Promise<strin
   if (reloginActive() && (cmd.startsWith("!code ") || !raw.startsWith("!"))) {
     const code = raw.replace(/^!code\s+/i, "").trim();
     try {
-      const ok = await submitCode(code);
-      return ok ? "✅ Re-login done. Naya 1-saal token save ho gaya. Ab apna kaam dobara bolo." : "❌ Code reject hua. Dobara `!relogin` bhejo.";
+      const r = await submitCode(code);
+      if (r.ok && r.tokenSaved) return "✅ Ho gaya! Naya 1-saal wala token save aur active. Ab expiry ~1 saal door hai. Apna kaam dobara bolo.";
+      if (r.ok) return "⚠️ Login to hua par 1-saal token capture nahi hua. Dobara `!relogin` try karo (link → authorize → code bhejo).";
+      return "❌ Code reject/galat. Dobara `!relogin` bhejo.";
     } catch (err) {
       return `Code submit fail: ${err instanceof Error ? err.message : String(err)}`;
     }

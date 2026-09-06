@@ -6,6 +6,9 @@
  * node-pty is a native module and only needed on the cloud host, so it is
  * loaded lazily — the Windows PC worker never imports this file.
  */
+import fs from "node:fs";
+import path from "node:path";
+
 type IPty = {
   onData(cb: (d: string) => void): { dispose(): void };
   onExit(cb: (e: { exitCode: number }) => void): { dispose(): void };
@@ -14,6 +17,24 @@ type IPty = {
 };
 
 const URL_RE = /https:\/\/claude\.com\/cai\/oauth\/authorize\?[A-Za-z0-9%&=_.\-]+/;
+// The long-lived (1-year) token setup-token prints on success.
+const TOKEN_RE = /sk-ant-oat[a-zA-Z0-9_-]{20,}/;
+const stripAnsi = (s: string) => s.replace(/\x1b\[[0-9;?]*[A-Za-z]/g, "").replace(/\x1b\]8;[^\x07\x1b]*(?:\x07|\x1b\\)/g, "");
+
+/** Persist the long-lived token so the bot (and restarts) use it, and apply it now. */
+function saveToken(token: string) {
+  process.env.CLAUDE_CODE_OAUTH_TOKEN = token; // takes effect for the next agent query
+  const file = path.resolve(".env");
+  let lines: string[] = [];
+  try {
+    lines = fs.readFileSync(file, "utf8").split(/\r?\n/).filter((l) => !l.startsWith("CLAUDE_CODE_OAUTH_TOKEN="));
+  } catch {
+    /* no .env yet */
+  }
+  while (lines.length && lines[lines.length - 1] === "") lines.pop();
+  lines.push(`CLAUDE_CODE_OAUTH_TOKEN=${token}`);
+  fs.writeFileSync(file, lines.join("\n") + "\n", { mode: 0o600 });
+}
 
 let session: { pty: IPty; startedAt: number } | null = null;
 
@@ -75,14 +96,27 @@ export async function startRelogin(): Promise<string> {
   });
 }
 
-/** Feed the authorization code back to the running setup-token. */
-export async function submitCode(code: string): Promise<boolean> {
+export interface ReloginResult {
+  ok: boolean;
+  tokenSaved: boolean;
+}
+
+/** Feed the authorization code back and capture + persist the long-lived token. */
+export async function submitCode(code: string): Promise<ReloginResult> {
   if (!session) throw new Error("No re-login in progress. Send !relogin first.");
   const s = session;
   return new Promise((resolve) => {
     let buf = "";
     let settled = false;
-    const finish = (ok: boolean) => {
+    const tryToken = (): boolean => {
+      const m = stripAnsi(buf).match(TOKEN_RE);
+      if (m) {
+        saveToken(m[0]);
+        return true;
+      }
+      return false;
+    };
+    const finish = (ok: boolean, tokenSaved: boolean) => {
       if (settled) return;
       settled = true;
       clearTimeout(to);
@@ -92,17 +126,18 @@ export async function submitCode(code: string): Promise<boolean> {
         /* noop */
       }
       endSession();
-      resolve(ok);
+      resolve({ ok, tokenSaved });
     };
     const sub = s.pty.onData((d) => {
       buf += d;
-      const clean = buf.replace(/\x1b\[[0-9;?]*[A-Za-z]/g, "");
-      if (/success|logged in|saved|token set|you'?re all set|complete/i.test(clean)) finish(true);
-      else if (/invalid|error|failed|expired|incorrect|denied/i.test(clean)) finish(false);
+      if (tryToken()) finish(true, true);
+      else if (/invalid|incorrect|denied|error|failed|expired/i.test(stripAnsi(buf))) finish(false, false);
     });
-    s.pty.onExit(({ exitCode }) => finish(exitCode === 0));
-    // Fallback: assume success if it neither errors nor exits within 45s.
-    const to = setTimeout(() => finish(true), 45000);
+    s.pty.onExit(({ exitCode }) => {
+      if (tryToken()) finish(true, true);
+      else finish(exitCode === 0, false); // exited cleanly but no token captured
+    });
+    const to = setTimeout(() => finish(tryToken(), false), 60000);
     s.pty.write(code.trim() + "\r");
   });
 }
