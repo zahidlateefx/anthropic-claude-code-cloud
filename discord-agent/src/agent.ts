@@ -48,37 +48,33 @@ function systemPrompt(): string {
   ].join("\n");
 }
 
+/** Friendly, spam-free description of the current step (for progress updates). */
 function summarizeTool(name: string, input: Record<string, unknown>): string {
   const first = (k: string) => {
     const v = input[k];
-    return typeof v === "string" ? v.split("\n")[0].slice(0, 90) : "";
+    return typeof v === "string" ? v.split("\n")[0].slice(0, 60) : "";
   };
   switch (name) {
     case "Bash":
-      return `$ ${first("command")}`;
+      return "commands chala raha hoon";
     case "Read":
     case "Write":
     case "Edit":
-      return `${name} ${first("file_path")}`;
-    case "WebSearch":
-      return `Search: ${first("query")}`;
-    case "WebFetch":
-      return `Fetch: ${first("url")}`;
     case "Glob":
     case "Grep":
-      return `${name} ${first("pattern")}`;
+      return "files par kaam kar raha hoon";
+    case "WebSearch":
+      return `web search: ${first("query")}`.trim();
+    case "WebFetch":
+      return "web se padh raha hoon";
     case "Agent":
-      return `Subagent: ${first("description")}`;
-    default:
-      if (name.startsWith(`mcp__${TOOLS_SERVER_NAME}__`)) {
-        const short = name.slice(`mcp__${TOOLS_SERVER_NAME}__`.length);
-        const args = Object.entries(input)
-          .filter(([, v]) => typeof v === "string" || typeof v === "number")
-          .map(([k, v]) => `${k}=${String(v).split("\n")[0].slice(0, 40)}`)
-          .join(" ");
-        return `${short} ${args}`.trim();
-      }
-      return name;
+      return "sub-task chala raha hoon";
+    default: {
+      const short = name.startsWith(`mcp__${TOOLS_SERVER_NAME}__`) ? name.slice(`mcp__${TOOLS_SERVER_NAME}__`.length) : name;
+      if (short.startsWith("pc_")) return "tumhare PC par kaam kar raha hoon";
+      if (short.startsWith("schedule") || short === "list_schedules" || short === "cancel_schedule") return "reminder set kar raha hoon";
+      return "kaam kar raha hoon";
+    }
   }
 }
 

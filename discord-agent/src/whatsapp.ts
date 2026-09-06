@@ -115,16 +115,25 @@ export function startWhatsApp() {
       async openResponder(jid): Promise<Responder | null> {
         await sock.sendPresenceUpdate("composing", jid).catch(() => {});
         const status = await waSend(jid, { text: "💭 Working…" });
+        const startedAt = Date.now();
+        let activity = "shuru kar raha hoon";
 
         const editStatus = (text: string) =>
           status ? waSend(jid, { text, edit: status.key }) : waSend(jid, { text });
 
+        // Light heartbeat: refresh a friendly progress line every 30s.
+        const heartbeat = setInterval(() => {
+          const secs = Math.round((Date.now() - startedAt) / 1000);
+          void editStatus(`⏳ ${secs}s · ${activity}`);
+          void sock.sendPresenceUpdate("composing", jid).catch(() => {});
+        }, 30000);
+
         return {
-          onTool() {
-            // Intentionally silent: show only "Working…" then the final answer.
-            void sock.sendPresenceUpdate("composing", jid).catch(() => {});
+          onTool(summary) {
+            activity = summary; // shown by the heartbeat, not per call
           },
           async finalize(text, files) {
+            clearInterval(heartbeat);
             const chunks = chunkMessage(text, WA_LIMIT);
             await editStatus(chunks[0]);
             for (const c of chunks.slice(1)) await waSend(jid, { text: c });
@@ -137,6 +146,7 @@ export function startWhatsApp() {
             await sock.sendPresenceUpdate("paused", jid).catch(() => {});
           },
           async fail(message) {
+            clearInterval(heartbeat);
             await editStatus(`❌ ${message}`.slice(0, 700));
           },
         };

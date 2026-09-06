@@ -66,12 +66,22 @@ export function startDiscord() {
       const sendable = channel as SendableChannels;
       const status = await sendable.send("💭 Working…").catch(() => null);
       const typing = setInterval(() => sendable.sendTyping().catch(() => {}), 8000);
+      const startedAt = Date.now();
+      let activity = "shuru kar raha hoon";
+      // Light heartbeat: refresh a friendly progress line every 25s (no per-tool spam).
+      const heartbeat = setInterval(() => {
+        const secs = Math.round((Date.now() - startedAt) / 1000);
+        status?.edit(truncate(`⏳ ${secs}s · ${activity}`, 1900)).catch(() => {});
+      }, 25000);
 
-      const done = () => clearInterval(typing);
+      const done = () => {
+        clearInterval(typing);
+        clearInterval(heartbeat);
+      };
 
       return {
-        onTool() {
-          // Intentionally silent: show only "Working…" then the final answer.
+        onTool(summary) {
+          activity = summary; // picked up by the heartbeat, not sent immediately
         },
         async finalize(text, files) {
           done();
