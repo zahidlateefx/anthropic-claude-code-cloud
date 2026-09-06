@@ -148,10 +148,14 @@ export function startWhatsApp() {
     };
     registerTransport(transport);
 
+    const debug = process.env.WA_DEBUG === "1";
     sock.ev.on("messages.upsert", async (up: any) => {
+      if (debug) console.log(`WA upsert type=${up.type} n=${up.messages?.length} self=${digits(sock.user?.id ?? "")}`);
       if (up.type !== "notify") return;
       const selfNum = digits(sock.user?.id ?? "");
       for (const msg of up.messages) {
+        if (debug)
+          console.log(`WA msg fromMe=${msg.key.fromMe} jid=${msg.key.remoteJid} id=${msg.key.id} text=${JSON.stringify(extractText(msg).slice(0, 60))}`);
         if (!msg.message) continue;
         if (msg.key.id && sentIds.has(msg.key.id)) continue; // our own reply
         const jid: string = msg.key.remoteJid ?? "";
@@ -161,9 +165,15 @@ export function startWhatsApp() {
         // commands it from the self-chat (messages there are `fromMe`).
         const isSelfChat = digits(jid) === selfNum;
         if (msg.key.fromMe) {
-          if (!isSelfChat || !config.whatsapp.owners.has(selfNum)) continue;
+          if (!isSelfChat || !config.whatsapp.owners.has(selfNum)) {
+            if (debug) console.log(`WA skip fromMe: isSelfChat=${isSelfChat} ownerHasSelf=${config.whatsapp.owners.has(selfNum)}`);
+            continue;
+          }
         } else {
-          if (!config.whatsapp.owners.has(digits(jid))) continue;
+          if (!config.whatsapp.owners.has(digits(jid))) {
+            if (debug) console.log(`WA skip: sender ${digits(jid)} not an owner`);
+            continue;
+          }
         }
 
         const text = extractText(msg).trim();
