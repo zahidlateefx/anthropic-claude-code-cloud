@@ -44,10 +44,13 @@ Set-Location (Join-Path $Dir "discord-agent")
 # --- .env ------------------------------------------------------------------
 if (-not (Test-Path ".env")) {
   Say "Configuration"
-  $token = if ($env:DISCORD_TOKEN) { $env:DISCORD_TOKEN } else { Read-Host "Discord bot token" }
-  $owner = if ($env:DISCORD_OWNER_IDS) { $env:DISCORD_OWNER_IDS } else { Read-Host "Your Discord user ID" }
-  if (-not $token -or -not $owner) { throw "token and user ID are required" }
-  $lines = @("DISCORD_TOKEN=$token", "DISCORD_OWNER_IDS=$owner")
+  $token = if ($env:DISCORD_TOKEN) { $env:DISCORD_TOKEN } else { Read-Host "Discord bot token (blank to skip)" }
+  $owner = if ($token) { if ($env:DISCORD_OWNER_IDS) { $env:DISCORD_OWNER_IDS } else { Read-Host "Your Discord user ID" } } else { "" }
+  $wa    = if ($env:WHATSAPP_OWNER_NUMBERS) { $env:WHATSAPP_OWNER_NUMBERS } else { Read-Host "WhatsApp number with country code (blank to skip)" }
+  if (-not (($token -and $owner) -or $wa)) { throw "configure Discord (token + user ID) and/or a WhatsApp number" }
+  $lines = @()
+  if ($token) { $lines += "DISCORD_TOKEN=$token"; $lines += "DISCORD_OWNER_IDS=$owner" }
+  if ($wa) { $lines += "WHATSAPP_OWNER_NUMBERS=$wa" }
   if ($env:ANTHROPIC_API_KEY) { $lines += "ANTHROPIC_API_KEY=$($env:ANTHROPIC_API_KEY)" }
   Set-Content -Path ".env" -Value $lines -Encoding ascii
   Say "Wrote $Dir\discord-agent\.env"
@@ -70,16 +73,18 @@ if (-not (Need "pm2")) { npm install -g pm2 }
 pm2 delete friday *> $null
 pm2 start dist/index.js --name friday --time
 pm2 save *> $null
-Start-Sleep -Seconds 3
-pm2 logs friday --lines 15 --nostream
+Start-Sleep -Seconds 4
+pm2 logs friday --lines 40 --nostream
 
 Write-Host @"
 
 Done. Useful commands:
-  pm2 logs friday      # live logs (invite link is printed here)
+  pm2 logs friday      # live logs (Discord invite link + WhatsApp QR appear here)
   pm2 restart friday   # after editing AGENT.md or .env
   pm2 stop friday
 
 To auto-start after reboot on Windows: npm i -g pm2-windows-startup ; pm2-startup install
-Next: open the invite link from the logs to add the bot to a server, then DM it on Discord.
+Next steps:
+  - Discord: open the invite link from the logs, add the bot to a server, then DM it.
+  - WhatsApp: run 'pm2 logs friday' and scan the QR (WhatsApp -> Linked Devices -> Link a Device).
 "@

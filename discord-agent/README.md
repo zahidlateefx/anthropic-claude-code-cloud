@@ -1,6 +1,6 @@
-# Discord Claude Agent
+# Friday — Personal Claude Code Agent
 
-Apna personal AI agent jo tum Discord se (phone se bhi) control karte ho. Wahi setup jo reel mein tha (unka "Thor", tumhara "Friday"): Discord bot → tumhare computer par chalta hua full Claude Code agent (shell, files, web search, git/GitHub, jo bhi CLI installed hai).
+Apna personal AI agent jo tum **Discord aur/ya WhatsApp** se (phone se bhi) control karte ho. Wahi setup jo reel mein tha (unka "Thor", tumhara "Friday"): Discord bot → tumhare computer par chalta hua full Claude Code agent (shell, files, web search, git/GitHub, jo bhi CLI installed hai).
 
 ```
 Phone (Discord DM) ──▶ Bot (this repo) ──▶ Claude Agent SDK ──▶ tumhara laptop/server
@@ -86,7 +86,8 @@ Server channels mein bot ko `@mention` karna padta hai; DM mein direct likho.
 
 | Var | Default | Note |
 |---|---|---|
-| `DISCORD_OWNER_IDS` | – | **Required.** Sirf ye users command de sakte hain |
+| `DISCORD_OWNER_IDS` | – | Discord chahiye to sirf ye users command de sakte hain |
+| `WHATSAPP_OWNER_NUMBERS` | – | WhatsApp chahiye to ye number(s), country code ke sath (e.g. `923001234567`) |
 | `AGENT_PERMISSION_MODE` | `bypassPermissions` | Full autonomy (reel jaisa). `acceptEdits` = sirf file edits auto, commands deny. `auto` = classifier decide kare |
 | `AGENT_MODEL` | `claude-opus-5` | `claude-sonnet-5` sasta/tez, `claude-fable-5-1` sabse smart |
 | `AGENT_WORKSPACE` | `./workspace` | Agent yahan kaam karta hai |
@@ -94,6 +95,18 @@ Server channels mein bot ko `@mention` karna padta hai; DM mein direct likho.
 | `AGENT_TIMEZONE` | system tz | Reminders/cron ke liye, e.g. `Asia/Karachi` |
 
 `AGENT.md` edit karke agent ko apne baare mein, apne projects, aur rules batao (system prompt mein append hota hai).
+
+## WhatsApp
+
+WhatsApp chalane ke liye `.env` mein `WHATSAPP_OWNER_NUMBERS` set karo (Discord optional ho jata hai — kam se kam ek transport chahiye). Baileys use hota hai: koi browser/Chromium nahi, sirf QR se link.
+
+1. Bot start karo, phir `pm2 logs friday` — ek QR code print hoga.
+2. Phone par WhatsApp → Settings → **Linked Devices** → **Link a Device** → QR scan karo.
+3. Ab apne hi WhatsApp par (ya apne number ko "Message Yourself") likho — Friday jawab dega.
+
+- Sirf `WHATSAPP_OWNER_NUMBERS` wale number command de sakte hain. Groups ignore hote hain (sirf 1:1 chat).
+- Session `data/wa-auth/` mein save hota hai, restart ke baad dobara scan nahi karna.
+- File bhejo to `workspace/inbox/` mein save hoti hai; Friday jo file bheje wo attach ho jati hai.
 
 ## Screen control (computer use) — prerequisites
 
@@ -121,7 +134,10 @@ Har request pe ~$0.05–$2 (Opus 5, task ki length par depend). Console log mein
 ## Structure
 
 ```
-src/index.ts         Discord client, queue per channel, attachments, status edits
+src/index.ts         Entry: starts configured transports
+src/core.ts          Transport-agnostic: queue, commands, scheduler routing
+src/discord.ts       Discord adapter
+src/whatsapp.ts      WhatsApp adapter (Baileys, QR login)
 src/agent.ts         Claude Agent SDK query(), tool progress, outbox
 src/sessions.ts      channel → session id (data/sessions.json)
 src/discord-utils.ts 2000-char safe chunking

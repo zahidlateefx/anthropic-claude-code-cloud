@@ -59,13 +59,18 @@ if [ ! -f .env ]; then
   if [ -z "${DISCORD_TOKEN:-}" ]; then
     read -r -p "Discord bot token: " DISCORD_TOKEN </dev/tty
   fi
-  if [ -z "${DISCORD_OWNER_IDS:-}" ]; then
+  if [ -z "${DISCORD_OWNER_IDS:-}" ] && [ -n "$DISCORD_TOKEN" ]; then
     read -r -p "Your Discord user ID: " DISCORD_OWNER_IDS </dev/tty
   fi
-  [ -n "$DISCORD_TOKEN" ] && [ -n "$DISCORD_OWNER_IDS" ] || die "token and user ID are required"
+  if [ -z "${WHATSAPP_OWNER_NUMBERS:-}" ]; then
+    read -r -p "WhatsApp number with country code (optional, blank to skip): " WHATSAPP_OWNER_NUMBERS </dev/tty
+  fi
+  { [ -n "$DISCORD_TOKEN" ] && [ -n "$DISCORD_OWNER_IDS" ]; } || [ -n "${WHATSAPP_OWNER_NUMBERS:-}" ] \
+    || die "configure Discord (token + user ID) and/or a WhatsApp number"
   {
-    echo "DISCORD_TOKEN=$DISCORD_TOKEN"
-    echo "DISCORD_OWNER_IDS=$DISCORD_OWNER_IDS"
+    [ -n "$DISCORD_TOKEN" ] && echo "DISCORD_TOKEN=$DISCORD_TOKEN"
+    [ -n "$DISCORD_OWNER_IDS" ] && echo "DISCORD_OWNER_IDS=$DISCORD_OWNER_IDS"
+    [ -n "${WHATSAPP_OWNER_NUMBERS:-}" ] && echo "WHATSAPP_OWNER_NUMBERS=$WHATSAPP_OWNER_NUMBERS"
     [ -n "${ANTHROPIC_API_KEY:-}" ] && echo "ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY"
   } > .env
   chmod 600 .env
@@ -96,15 +101,17 @@ pm2 start dist/index.js --name friday --time
 pm2 save >/dev/null
 pm2 startup 2>/dev/null | grep -E '^sudo' | bash || true
 
-sleep 3
-pm2 logs friday --lines 15 --nostream
+sleep 4
+pm2 logs friday --lines 40 --nostream
 
 cat <<EOF
 
 Done. Useful commands:
-  pm2 logs friday      # live logs (invite link is printed here)
+  pm2 logs friday      # live logs (Discord invite link + WhatsApp QR appear here)
   pm2 restart friday   # after editing AGENT.md or .env
   pm2 stop friday
 
-Next: open the invite link from the logs to add the bot to a server, then DM it on Discord.
+Next steps:
+  - Discord: open the invite link from the logs, add the bot to a server, then DM it.
+  - WhatsApp: run 'pm2 logs friday' and scan the QR (WhatsApp -> Linked Devices -> Link a Device).
 EOF

@@ -9,12 +9,6 @@ function list(v: string | undefined): string[] {
     .filter(Boolean);
 }
 
-function required(name: string): string {
-  const v = process.env[name];
-  if (!v) throw new Error(`Missing required env var ${name} (see .env.example)`);
-  return v;
-}
-
 const PERMISSION_MODES: PermissionMode[] = ["bypassPermissions", "acceptEdits", "auto", "default", "dontAsk", "plan"];
 
 function permissionMode(v: string | undefined): PermissionMode {
@@ -25,10 +19,24 @@ function permissionMode(v: string | undefined): PermissionMode {
   return mode;
 }
 
+// Digits-only phone number, so +92 300 1234567 and 923001234567 compare equal.
+const digits = (s: string) => s.replace(/\D/g, "");
+
+const discordToken = process.env.DISCORD_TOKEN?.trim() || "";
+const discordOwners = new Set(list(process.env.DISCORD_OWNER_IDS));
+const waOwners = new Set(list(process.env.WHATSAPP_OWNER_NUMBERS).map(digits).filter(Boolean));
+
 export const config = {
-  discordToken: required("DISCORD_TOKEN"),
-  ownerIds: new Set(list(process.env.DISCORD_OWNER_IDS)),
-  channelIds: new Set(list(process.env.DISCORD_CHANNEL_IDS)),
+  discord: {
+    enabled: Boolean(discordToken),
+    token: discordToken,
+    ownerIds: discordOwners,
+    channelIds: new Set(list(process.env.DISCORD_CHANNEL_IDS)),
+  },
+  whatsapp: {
+    enabled: waOwners.size > 0,
+    owners: waOwners,
+  },
   model: process.env.AGENT_MODEL || "claude-opus-5",
   workspace: path.resolve(process.env.AGENT_WORKSPACE || "./workspace"),
   permissionMode: permissionMode(process.env.AGENT_PERMISSION_MODE),
@@ -38,6 +46,9 @@ export const config = {
   dataDir: path.resolve("./data"),
 };
 
-if (config.ownerIds.size === 0) {
-  throw new Error("DISCORD_OWNER_IDS is empty. Refusing to start a bot anyone on Discord could command.");
+if (!config.discord.enabled && !config.whatsapp.enabled) {
+  throw new Error("No transport configured. Set DISCORD_TOKEN (+ DISCORD_OWNER_IDS) and/or WHATSAPP_OWNER_NUMBERS.");
+}
+if (config.discord.enabled && config.discord.ownerIds.size === 0) {
+  throw new Error("DISCORD_OWNER_IDS is empty. Refusing to start a Discord bot anyone could command.");
 }

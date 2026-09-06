@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Discord bot that drives a full Claude Code agent (shell, files, web, GitHub) from your phone",
+  "description": "Personal Claude Code agent you control from Discord and/or WhatsApp",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
@@ -15,9 +15,12 @@
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.3.263",
+    "@whiskeysockets/baileys": "^6.7.24",
     "croner": "^10.0.1",
     "discord.js": "^14.27.0",
     "dotenv": "^17.2.3",
+    "pino": "^10.3.1",
+    "qrcode-terminal": "^0.12.0",
     "zod": "^4.5.4"
   },
   "devDependencies": {
