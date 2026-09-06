@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # One-command installer for the Discord Claude agent (macOS / Linux).
 #
-#   curl -fsSL https://raw.githubusercontent.com/zahidlateefx/anthropic-claude-code-cloud/claude/instagram-reel-discord-agent-ooifkn/discord-agent/install.sh | bash
+#   git clone -b claude/instagram-reel-discord-agent-ooifkn https://github.com/zahidlateefx/anthropic-claude-code-cloud.git ~/friday-agent
+#   bash ~/friday-agent/discord-agent/install.sh
 #
 # Optional env vars to skip the prompts: DISCORD_TOKEN, DISCORD_OWNER_IDS
 set -euo pipefail
@@ -37,7 +38,11 @@ if ! command -v claude >/dev/null 2>&1; then
 fi
 
 # --- Repo ------------------------------------------------------------------
-if [ -d "$DIR/.git" ]; then
+# Running from inside a checkout (bash discord-agent/install.sh)? Use it as-is.
+if [ -f "${BASH_SOURCE[0]:-}" ] && [ -f "$(dirname "${BASH_SOURCE[0]}")/package.json" ]; then
+  DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+  say "Using checkout at $DIR"
+elif [ -d "$DIR/.git" ]; then
   say "Updating $DIR"
   git -C "$DIR" fetch origin "$BRANCH"
   git -C "$DIR" checkout -q "$BRANCH"

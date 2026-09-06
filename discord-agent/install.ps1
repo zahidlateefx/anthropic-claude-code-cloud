@@ -1,6 +1,7 @@
 # One-command installer for the Discord Claude agent (Windows PowerShell).
 #
-#   irm https://raw.githubusercontent.com/zahidlateefx/anthropic-claude-code-cloud/claude/instagram-reel-discord-agent-ooifkn/discord-agent/install.ps1 | iex
+#   git clone -b claude/instagram-reel-discord-agent-ooifkn https://github.com/zahidlateefx/anthropic-claude-code-cloud.git $HOME\friday-agent
+#   powershell -ExecutionPolicy Bypass -File $HOME\friday-agent\discord-agent\install.ps1
 #
 # Optional env vars to skip the prompts: $env:DISCORD_TOKEN, $env:DISCORD_OWNER_IDS
 $ErrorActionPreference = "Stop"
@@ -26,7 +27,10 @@ Say "Node $(node -v) OK"
 if (-not (Need "claude")) { Say "Installing Claude Code CLI"; npm install -g @anthropic-ai/claude-code }
 
 # --- Repo ------------------------------------------------------------------
-if (Test-Path (Join-Path $Dir ".git")) {
+if ($PSScriptRoot -and (Test-Path (Join-Path $PSScriptRoot "package.json"))) {
+  $Dir = Split-Path $PSScriptRoot -Parent
+  Say "Using checkout at $Dir"
+} elseif (Test-Path (Join-Path $Dir ".git")) {
   Say "Updating $Dir"
   git -C $Dir fetch origin $Branch
   git -C $Dir checkout -q $Branch

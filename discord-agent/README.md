@@ -19,16 +19,18 @@ Phone (Discord DM) ──▶ Bot (this repo) ──▶ Claude Agent SDK ──�
 
 ## Fastest setup (one command)
 
-Discord token aur apna user ID (neeche step 1) hath mein rakho, phir:
+Discord token aur apna user ID (neeche step 1) hath mein rakho. Git installed ho (repo private hai, clone par GitHub login poochega).
 
 **macOS / Linux**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zahidlateefx/anthropic-claude-code-cloud/claude/instagram-reel-discord-agent-ooifkn/discord-agent/install.sh | bash
+git clone -b claude/instagram-reel-discord-agent-ooifkn https://github.com/zahidlateefx/anthropic-claude-code-cloud.git ~/friday-agent
+bash ~/friday-agent/discord-agent/install.sh
 ```
 
 **Windows (PowerShell)**
 ```powershell
-irm https://raw.githubusercontent.com/zahidlateefx/anthropic-claude-code-cloud/claude/instagram-reel-discord-agent-ooifkn/discord-agent/install.ps1 | iex
+git clone -b claude/instagram-reel-discord-agent-ooifkn https://github.com/zahidlateefx/anthropic-claude-code-cloud.git $HOME\friday-agent
+powershell -ExecutionPolicy Bypass -File $HOME\friday-agent\discord-agent\install.ps1
 ```
 
 Installer Node, Claude CLI, repo, build, `claude login` (agar zaroorat ho) aur pm2 sab khud karta hai. Aakhir mein logs mein bot ka **invite link** print hota hai, wo open karke bot apne server mein add karo.
