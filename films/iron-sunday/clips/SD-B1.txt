@@ -1,0 +1,16 @@
+MODE: NEW CLIP (references) — duration 15 s — 16:9
+ACT 1 SETUP part 1 of 2 (rule 21.1: complicated scene, 15 s). The one wide and Caldera's walk.
+Hard cut in from SD-A. Ends on: CALDERA's hand flat on the organ case, grinning, after his line.
+Attach order: image5 = CALDERA, image6 = ORGANIST, image7 = PIPE ORGAN, image8 = FANG,
+image9 = CARRION, image10 = TUSK, image11 = SKITTER, image12 = DUNE, image13 = MANGE,
+image14 = MISSION NAVE interior (empty room).
+
+15-second clip, 16:9, photoreal cinematic CG creature-feature western, gritty, film grain, anamorphic. Two shots, one hard cut at 0:08 on a movement. Camera slow and steady, never handheld. Short dialogue as written, no subtitles, no humans or text.
+Look: @image14 is the room. Keep its walls, pews, floor, organ, lamp and light exactly as drawn in every shot: a ruined desert mission church, cracked pale adobe patched with rusty corrugated iron, broken grey pews along a dirt aisle, bullet holes, timber doors at the near end, a battered pipe organ with one amber oil lamp at the far end. Everything old, broken and filthy. Desaturated dust, bone and rust; the only red is the scarf. Two lights and no others: hard white daylight through window slits in the left wall, falling from the left as dust shafts, and the amber lamp at the right; everything else deep shadow. The camera never crosses the aisle.
+References: @image6 THE ORGANIST, rusty steel mask with one dark glass slit, dark brown hat, red scarf, sand duster, black gauntlet gloves; face never visible, hands gloved. @image7 the organ. @image5 CALDERA, black-and-orange hide, gold teeth, silver cross, 2.4 m and the tallest. Six different gunmen, never mixed: @image8 FANG, @image9 CARRION, @image10 TUSK, @image11 SKITTER, @image12 DUNE, @image13 MANGE.
+[0-8s] The only wide shot of this church in the film. Master wide from the back of the nave, 40 degree, camera low at pew height, locked. The doors are kicked in and slam against the walls, daylight floods the aisle, dust boils up. The six gunmen come down the aisle and stop between the pews, weapons up, CALDERA (@image5) walking on past them toward the organ. THE ORGANIST (@image6) sits at the far organ, back turned, playing. Nobody fires.
+HARD CUT
+[8-15s] Tracking medium with CALDERA (@image5) on the last of the aisle, 35 degree, camera close beside him at shoulder height, CALDERA alone in frame at the right, everything behind him out of focus and almost black. Daylight crosses him from the left in bars. He grins with gold teeth, tongue flicking, reaches the organ and lays a hand flat on the case beside the lamp, and holds there.
+CALDERA: "You are in my church, friend."
+Audio: only natural sound: the wheezing pipe organ with leaking bellows and two dead clicking notes, long stone reverb, playing through the whole clip; the doors banging on stone at 1s; boots and spurs on dirt; CALDERA's heavy footsteps and one short English line at 12s. Only CALDERA speaks. No gunfire. No background music.
+Avoid: no second wide, no other cuts, no handheld or shake, no flip of screen direction, no light from the right, no face or skin under the mask, no bare hands, no hat removed, no gunfire, no two gunmen alike, no gunman in frame after 8s, no text, no subtitles.

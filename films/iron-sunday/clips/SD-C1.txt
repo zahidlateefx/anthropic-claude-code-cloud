@@ -1,0 +1,14 @@
+MODE: NEW CLIP (references) — duration 10 s — 16:9
+ACT 1 FIGHT, kill 1 of 3. Shooter / victim pair (rule 20.2). One character per frame, never both.
+Template for SD-C2 (CARRION) and SD-C3 (FANG): same structure, swap the victim's sheet and fall.
+Hard cut in from SD-B (barrels snapping shut). Ends on: TUSK down across a broken pew, still.
+Attach order: image6 = ORGANIST, image7 = PIPE ORGAN, image10 = TUSK, image14 = MISSION NAVE interior.
+
+10-second clip, 16:9, photoreal cinematic CG creature-feature western, gritty, film grain, anamorphic. Two shots, one hard cut at 0:05 on the gunshot. Camera locked in both shots. Exactly one character in each shot, never two. No dialogue, no subtitles, no humans or text.
+Look: @image14 is the room; keep its walls, pews, organ, lamp and light exactly as drawn. A ruined desert mission church, everything old, broken and filthy: cracked pale adobe, rusty corrugated iron patches, broken grey pews, dust and rubbish on a dirt floor. Two lights and no others: hard white daylight through window slits at the left, falling from the left as dust shafts, and one amber oil lamp on the organ at the right; everything else is deep shadow. Desaturated dust, bone and rust; the only red is the scarf and blood.
+References: @image6 THE ORGANIST, rusty steel mask with one dark glass slit, dark brown hat, red scarf, sand duster, black gauntlet gloves, two sawn-off shotguns; face never visible, hands gloved. @image7 the organ behind him. @image10 TUSK, the heavy boar gunman with chipped tusks, grey duster and flat black hat.
+[0-5s] Medium shot of THE ORGANIST (@image6) alone, 35 degree, camera locked at chest height. He stands beside the organ (@image7) with the amber lamp at the right edge of frame, the rest of the church behind him far out of focus and almost black. He faces screen-right, raises one sawn-off shotgun level and fires toward the right side of the frame. The muzzle flash lights the dust. Nobody else is in the shot.
+HARD CUT
+[5-10s] Medium shot of TUSK (@image10) alone, 35 degree, camera locked at chest height, a broken pew behind him and the church beyond in shadow. He faces screen-left with his shotgun half raised. He is hit from the left: his chest bursts in a spray of red, the shotgun flies from his hands, and he is thrown backward over the pew and lies still across it. Nobody else is in the shot.
+Audio: only natural sound: one enormous sawn-off shotgun blast with a long stone reverb tail at 4s; the shell casing ringing on the dirt; a heavy body crashing through a timber pew, wood splintering, a grunt cut short; dust settling; wind through the window slits. Nobody speaks. No background music.
+Avoid: no second character in either shot, no wide shot, no other cuts, no handheld or shake, no face or skin under the mask, no bare hands, no hat removed, no flip of screen direction, no light from the right, no slow motion, no blood on the lens, no text, no subtitles.

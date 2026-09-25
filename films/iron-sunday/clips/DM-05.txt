@@ -1,0 +1,28 @@
+MODE: NEW CLIP — 30 s — 16:9 — house format, tag-once. The dam, clip 5: DRIBBLE and the locket
+(owner 2026-09-24). Built from the owner's screenshot of DM-04's last wide (image 3). The render wins:
+a narrow dark concrete corridor, a pool of light from a hatch in the ceiling, THE ORGANIST standing in
+it facing the camera with the closed control-room door (orange window) BEHIND him, the stairwell going
+down at the lower left. Render error to correct: he held long revolvers; the prompt restates the two
+short double-barrel shotguns. Ends on a locked wide inside the control room as the radio starts to
+crackle: screenshot for DM-06 (THE VOICE: "I have your wife", her scream, end on the mask).
+Locket photo: face scratched away (the wife stays unseen).
+Tag (STRIDER and HOOK not in this clip): image 1 ORGANIST, 2 DRIBBLE, 3 DM-04 screenshot.
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western with grotesque creature characters, gritty, anamorphic, film grain. Seven shots joined by hard cuts; the model sets the timing. Short dialogue as written; THE ORGANIST never speaks, his mask never moves. No subtitles, no humans, no text. No still frame.
+Place: @image 3 shows the corridor outside the control room a moment earlier. It is a reference only, never a frame. Keep it: the narrow dark concrete corridor, the pool of light from the ceiling hatch, the rusty iron door with a small orange-lit window. Behind that door: a cramped concrete control room with big brass dials, rusty pipes, the big iron wheel that works the gate, a second door on the far side open onto the bright balcony, and a desk with an old radio set with a glowing orange dial and a speaker. Dim orange light inside, a bar of daylight from the balcony door. The only strong colour is the red scarf.
+Cast: @image 1 is THE ORGANIST: rusty steel mask, dark brown hat, red scarf, sand duster, black gloves, and in each hand a short sawn-off double-barrel shotgun, never revolvers or pistols, face never visible. @image 2 is DRIBBLE, a small shaking snail-man henchman, hiding in the control room. From here on everyone is called by name only; each appears only once in any shot.
+DRIBBLE's voice: high, wet, trembling, fast.
+SHOT 1. Medium inside the control room, facing the door: the iron door bursts open and THE ORGANIST steps in, a sawn-off shotgun in each hand, the dark corridor behind him. HARD CUT
+SHOT 2. Medium: under the radio desk, DRIBBLE cowers, his eye stalks trembling, pulling himself halfway into his shell. HARD CUT
+SHOT 3. Medium two-shot: THE ORGANIST points one shotgun down at him. DRIBBLE lifts his shaking hands. HARD CUT
+SHOT 4. Close on DRIBBLE.
+DRIBBLE (terrified, fast): "Boss isn't here. He left when he knew you were coming."
+HARD CUT
+SHOT 5. Medium two-shot: DRIBBLE holds out a small tarnished silver locket on a thin chain.
+DRIBBLE: "But he left this for you."
+THE ORGANIST lowers one shotgun and takes the locket from his hand. HARD CUT
+SHOT 6. Close insert: his black-gloved thumb opens the locket. Inside, a small faded photograph of a woman in a lace collar; her face has been scratched away with a blade. Opposite it, a tiny curl of dark hair. HARD CUT
+SHOT 7. Wide, locked, inside the control room: THE ORGANIST stands in the middle of the room holding the open locket, looking down at it; DRIBBLE still under the desk; the radio on the desk beside them; the corridor door open on the left, the bright balcony door on the right. The radio's orange dial flickers and the speaker begins to crackle. Hold.
+Physics: dust falls from the door frame; the locket chain swings; the dial light flickers.
+Audio: the door banging open and the muffled roar of water outside in shot 1; DRIBBLE's wet breathing and whimpering in shots 2 to 5; the locket clicking open in shot 6; a rising radio crackle in shot 7. No music.
+Avoid: no attached image as a frame, no still first frame, no revolvers or pistols, no gunfire, no face visible in the photograph, no text in the locket, no speaking or mouth movement from THE ORGANIST, no other characters, no copy of THE ORGANIST, no face under the mask, no blood, no gore, no text, no subtitles.

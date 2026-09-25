@@ -1,0 +1,39 @@
+EP01 colour grade in CapCut desktop (owner 2026-09-25). Goal: one look from the first shot to the last.
+Look: dusty spaghetti western, warm sun-bleached highlights, slightly cool shadows, low saturation,
+the red scarf is the only strong red. Numbers are starting points; judge by eye on 3-4 different clips.
+
+STEP 1 - FIX EACH CLIP FIRST (select the clip > Adjust > Basic)
+Only fix clips that stand out (too bright, too dark, too blue, too orange). Use a well-matched clip as the
+"hero" reference (e.g. a CH-02 church-yard wide) and nudge the others toward it:
+- Exposure / Highlights / Shadows until brightness matches the hero.
+- Temperature / Tint until the sand looks the same colour as in the hero.
+Do NOT add the look here, only make clips match each other.
+
+STEP 2 - ONE LOOK FOR THE WHOLE FILM (Adjustment layer)
+Adjustment > Custom adjustment > drag onto a track ABOVE all clips > stretch it over the whole timeline.
+Basic:
+  Temperature +10    Tint +3        Saturation -15
+  Contrast +12       Highlights -15 Shadows -8
+  Whites -5          Blacks -10     Brilliance +5
+  Sharpen 10         Vignette 15    Grain 15
+Color wheels (if available): Shadows toward teal (small), Highlights toward orange (small),
+  Midtones leave alone.
+HSL:
+  Red     saturation +10 (keeps the scarf strong)
+  Orange  saturation 0, luminance +5 (sand and skin)
+  Yellow  saturation -15
+  Green   saturation -40 (nothing should look lush)
+  Cyan/Blue saturation -25, hue slightly toward cyan (sky stays pale and dusty)
+  Purple/Magenta saturation -30
+Curves (optional): a gentle S-curve on RGB, and lift the very bottom point a little for a faded film black.
+When happy: Save as preset ("ORGANIST LOOK") so Episode 2 uses the same grade.
+
+STEP 3 - SCENES THAT NEED THEIR OWN LAYER
+If a scene still looks different under the main layer (church interior, dam, radio-tower dust), add a
+second short adjustment layer only over that scene and correct it (usually Exposure and Temperature)
+until it sits next to the scenes around it. Keep the main layer on top of everything.
+
+STEP 4 - CHECK
+Scrub the whole film at low speed and watch the cuts between scenes: the sand colour, the sky colour and
+the darkness of the shadows should not jump. The red scarf should always be the strongest colour.
+Title card and black frames: exclude them from grain/vignette if they look muddy (cut the layer there).

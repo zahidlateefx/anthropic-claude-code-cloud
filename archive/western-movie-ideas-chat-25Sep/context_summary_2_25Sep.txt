@@ -1,0 +1,78 @@
+This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+Summary:
+1. Primary Request and Intent:
+   The owner (Roman Urdu + English, direct, corrects hard; every correction becomes a permanent skill rule) is making THE ORGANIST (series), Episode 1 "IRON SUNDAY", a 6-8 min AI sci-fi spaghetti-western creature film in Seedance 2.5 (in-tool @image tags, ≤4,000 chars per prompt body, 5–30 s clips), images in Nano Banana (NO @image tags there—name attachments), music via Suno, edited by owner in CapCut. I act as director: write clip prompts with a delivery card (scene, edit position, exact shot-by-shot happenings, exact ending frame, attachments "image N = what" only), reference sheets, music prompts, YouTube text, and keep project files/skill updated. Film is now complete; recent work: title-card intro, music prompts, SFX/subtitle advice, YouTube title+description. Last request: "Seedance 2.5, Nano Banana and Suno ye bhi mention krny ki zrorat ni" (remove tool names from the description).
+
+2. Key Technical Concepts:
+   - House format prompt: style line, Look/Place, Cast (tag-once: "@image N is NAME: …", then names only), WHO IS WHERE list for groups, SHOT 1..N with HARD CUT, Audio, Avoid. Length measured with Python len of body after first blank line; tag regex `\(@image|@image \d+(?=[^\d\s])`; tags written `@image N` with spaces.
+   - Unique names for recurring things: STRIDER (mount, image of black reptile beast, never "horse/mount/reptile"), HOVER-TRUCK, THE TWIN PSALMS (Organist's two sawn-off shotguns), RADIO (option A rusty wire-wrapped brick), NECKLACE (option B rusty ring chain, cracked amber with dried flower).
+   - Screenshot continuity: last locked wide → owner screenshot → next clip Place reference "never a frame"; first shot continues previous angle; final wide gets its own angle and states new state (rule 60).
+   - Image slots: images still used keep numbers; unused removed, new fill freed slots; cards only list "image N = what" (rule 67).
+   - Radio voice block (thin, tinny, distorted, never clean), one emotion, no "..." pauses (rule 62). Everything old/rusty/ugly.
+   - Literal distances in metres, no "far" (rule 69); exact mechanics (60.1); fewer cuts (68); death shots: pairs in same frame may die together (55).
+   - Seedance start/end frame mode for title animation.
+
+3. Files and Code Sections (all under C:\Users\Zahid\AIShortFilms\films\iron-sunday\ unless noted):
+   - C:\Users\Zahid\.claude\skills\west-movie-director\SKILL.md — rules 51.1–71 appended (far landmark POV, music handoff, mounts/no "horse", never redesign established creature, delivery card + exact ending, death shots, tag-once + WHO IS WHERE, thumbnails, no unsheeted characters, Nano Banana no tags, final wide new state, open locations, radio voice/props rusty, no credits lines, convoy sound bed, riders stay mounted, unique names incl. props + scan generic words, image slots, fewer cuts, literal distances, sheet root causes, set up next clip).
+   - SERIES_BIBLE.md — series name THE ORGANIST; EP02 "THE RIBCAGE" locked; STRIDER entry; VOICE not revealed EP01; necklace B, radio A locked; open locations rule; TWIN PSALMS naming; everything rusty.
+   - EDIT_ORDER.md — full film order and attachments (OP-01..03, CH-01, CH-02 v9, INTRO, RD-01 v4 (ends shot 5), RD-01B, RD-02, TR-01 v5+TR-01T, SE-01, SA-01 shots 2-3, SA-R1, SA-03 v4, RT-00, TR-02, RT-01A, RT-01B, RT-02 v3, RT-03, DM-01..06).
+   - IMAGE_INDEX.md — numbering v2..v5 tables.
+   - clips/: RT-00 (v4), TR-02, RT-01A, RT-01B, RT-02 (v3, HUSK thrown off tower), RT-03, SE-01, SA-R1, SA-03 (v4), TR-01 (v5), TR-01T, DM-01 (v4 no dam ref), DM-02, DM-03 (v4 dodge/reload), DM-04, DM-05 (v6 necklace, shotgun drop), DM-06 (v5/v6, radio lying flat, ends "Come and get her. I'm waiting for you in The Ribcage." + laugh), OP-01 (v2), OP-02 (v5 WHO IS WHERE), OP-03, CH-01, CH-02 (v9 full 30 s, HOVER-TRUCKS, TWIN PSALMS on organ top, two double blasts, Caldera shot off STRIDER, camera to Organist), CH-02A (15 s fix, dropped), RD-01 (v4, 5 shots, lines: "Hey! Pick up the radio, you dogs!" / "Is it done or not? Answer me!" / "So the rumors were true. You really came back from the dead." / "This time I won't bury you. This time I'll burn you alive."), RD-01B (5 s cab angle, fires into dashboard below frame, no RADIO image, guns in hands not back; tags 1 ORGANIST,2 TWIN PSALMS,3 HOVER-TRUCK,4 cab screenshot), RD-02 (ride-out, guns into back scabbards; tags 1-6 incl. RADIO), INTRO.txt (10 s hero intro, superseded by text title idea); _superseded_tests/ archive.
+   - sheets/: RT_SHEETS.txt, DAM_SHEETS.txt (HOOK, WHISKER, PINCH), ENDING_SHEETS.txt (DRIBBLE), NECKLACE_OPTIONS.txt, RADIO_OPTIONS.txt, STRIDER_SHEET.txt (v2 copy of old dust-horse, black only), SHOTGUNS_SHEET.txt, TWIN_PSALMS_SHEET.txt, ORGANIST_SHEET_FIX.txt (remove holster, TWIN PSALMS crossed on back), DAM_CLEAN_PLATE.txt.
+   - thumbnails/: EP01_THUMBNAIL v1–v4, titles, ridge, TITLE_CARDS.txt (5 Nano ideas), TITLE_ANIMATION.txt (A two blasts, B slow burn-in; start frame black, end frame title card), BLACK_START_FRAME_1920x1080.png (sent to user).
+   - ORGANIST_THEME_SUNO.txt (v2 steady 104 BPM, no build).
+   - CHATGPT_MUSIC_BRIEF.md (all EP01 scenes, series name).
+   - YOUTUBE_EP01.txt (current, v3):
+```
+=== TITLE
+THE ORGANIST | Episode 1: Iron Sunday | Sci-Fi Western Short Film
+
+=== DESCRIPTION
+THE ORGANIST is an almost dialogue-free sci-fi western short film, told through gunfire, silence, and a voice on the radio.
+
+On a desert world under two moons, a gang of outlaws rides into a ruined church to finish a job they started three years ago. They buried a man there once. Now someone is sitting at the old organ, wearing an iron mask, and he never says a word.
+
+Expect creature gunslingers, rusty hover-trucks, reptile riders, fast shotgun fights, and a masked stranger who never runs. Every outlaw he takes down leads him one step closer to the man on the radio.
+
+This is Episode 1 of THE ORGANIST. Episode 2, THE RIBCAGE, is coming next.
+
+Like, comment your favorite moment, and subscribe so you don't miss the next episode.
+
+The visuals and music in this film were created with the help of AI tools. The story, the characters, the world, the direction and every creative decision are 100% human. AI was used as a production tool, and the final film was shaped by hand through editing, sound design and mixing.
+
+#SciFiWestern #WesternShortFilm #ShortFilm
+
+=== TAGS (YouTube tags box)
+The Organist, The Organist Episode 1, Iron Sunday, Sci-Fi Western, Sci-Fi Western Short Film, Western Short Film, Spaghetti Western, Space Western, Weird West, Creature Western, Creature Feature, Masked Gunslinger, Revenge Western, Cinematic Short Film, Action Short Film, Dialogue Free Short Film, Visual Storytelling, AI Short Film, AI Film, AI Filmmaking
+```
+
+4. Errors and fixes:
+   - Mount rendered as normal horse → renamed STRIDER, fixed description, Avoid "no ordinary horse"; owner rejected lizard redesign → STRIDER sheet v2 copies old design (rule 53.1).
+   - Duplicate Organists in town → tag-once rule 56.
+   - Pistols appearing → root cause Organist sheet holster; TWIN PSALMS unique name + sheet; Organist sheet fix; guns described by shape.
+   - Generic words (reptile/mounts/trucks) caused role swaps (coyote as mount, rider in truck, Caldera on foot) → WHO IS WHERE, unique names, rules 65/66/66.2.
+   - "Keep bottom quiet for credits" produced garbled text → rule 63.
+   - Final wide copying reference angle (Organist back in saddle) → rule 60.
+   - Radio voice clean, new radio, extreme zoom → rule 62; radio lying flat; reference image sometimes stuck as frame → specify different angles.
+   - Write tool "file modified since read" errors → Read then Write again; bash heredoc apostrophe failures → Python via heredoc with quoted PYEOF or Write tool; python stdout encoding → PYTHONIOENCODING=utf-8.
+   - Owner corrections: no whistle in music; music steady tempo; no tool names in description; image numbering must not reorder used images; show STRIDER in RD-01 for continuity; forgot RADIO image in RD-02 then added; RADIO not needed in RD-01B.
+
+5. Problem Solving:
+   Film clips all written and mostly rendered; continuity maintained via screenshots; YouTube packaging done matching reference channel (read via built-in browser: Crazy Taco Man "WANTED" and "WANTED RELOADED | Chapter Two" descriptions/keywords).
+
+6. All user messages (condensed, chronological since prior summary): RT-00 tower still close → show only top in dust; ChatGPT music brief request (no music instructions, only film/theme/taste); radio tower prompts; YT title/name questions; series name THE ORGANIST chosen; thumbnail requests (world/theme, fonts, only name+episode, no random people, no @image in Nano Banana, new concepts, no first-2-min characters); movie work resumes; TR-02 montage before RT-01; normal horse issue → new sheet, then keep old design; SE-01 20 s salt edge; renumber images (1 Organist, 2 mount); detail every prompt; SA-R1 fight rules; SA-03 from screenshot; TR-01 redo town structure; RT-01 split A/B with wide reference; RT-02 fixes (two-handed climb, HUSK thrown); RT-03 with bodies; dam plan approved; DM-01..DM-06 many fixes (necklace B chosen, radio A chosen, The Ribcage, voice/radio/zoom/door fixes); opening redo with individual sheets, gang of five (remove snake/rabbit, 2 trucks, 3 riders); OP-02 fixes; CH-01/CH-02 church redo with many fixes (TWIN PSALMS, two double blasts, Caldera survives inside, organ never opens, guns on organ, hover-trucks, 30 s full regen); RD-01 lines by owner; RD-01B 5 s cab angle, no radio image, guns not on back; RD-02 riding montage; "Complete ho gai film" → intro; text title intro chosen; Nano Banana then animate; bullet-holes card chosen; black start frame; Suno organ theme, steadier; tension underscore; 1:30 tension→groove→end; 12-15 s sting, no whistle; Suno timer question; SFX name for banner hit; subtitles style/CapCut; title & description; match reference channel; remove Seedance/Nano Banana/Suno mentions.
+   Standing constraints: owner permission before spending money/public posting/email and before deleting outside Friday workspace; never expose credentials. Shorts rules (2,100 chars, "Condense into 15s version", 100-char YT title) do NOT apply to this film niche.
+
+7. Pending Tasks:
+   - Deliver the updated YouTube description (tool-name-free) to the owner (file already updated, response not yet sent).
+   - Optional: chapters timestamps once owner gives final edit times; town montage "thora different" was requested earlier then superseded (TR-01 v5 exists); Episode 2 "The Ribcage" later.
+
+8. Current Work:
+   Just removed AI tool names from YOUTUBE_EP01.txt per owner: "Seedance 2.5, Nano Banana and Suno ye bhi mention krny ki zrorat ni". Changed line to "The visuals and music in this film were created with the help of AI tools." and removed "Seedance, Nano Banana, Suno" from tags. Final updated text is shown in section 3.
+
+9. Optional Next Step:
+   Send the owner the updated title, description and tags (from YOUTUBE_EP01.txt v3) in copyable fenced blocks, confirming the tool names are removed from both the description and the tags list.
+
+If you need specific details from before compaction (like exact code snippets, error messages, or content you generated), read the full transcript at: C:\Users\Zahid\.claude\projects\C--Users-Zahid-AIShortFilms\73522ae2-e7b1-443c-9ea6-894ecd5e7f16.jsonl
+Continue the conversation from where it left off without asking the user any further questions. Resume directly — do not acknowledge the summary, do not recap what was happening, do not preface with "I'll continue" or similar. Pick up the last task as if the break never happened.

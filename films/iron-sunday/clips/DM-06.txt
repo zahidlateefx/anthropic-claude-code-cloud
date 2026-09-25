@@ -1,0 +1,26 @@
+MODE: NEW CLIP — 30 s — 16:9 — house format, tag-once. The dam, clip 6: the LAST scene of EP01, v3
+(owner 2026-09-24). v2 problems: THE VOICE sounded clean, not like a radio; his tone changed line by
+line; too many pauses; the radio looked new and modern; the camera pushed in too close. v3: no room
+reference image (it messes things up; the room is described in text from the owner's screenshot),
+a full RADIO CHANNEL block, ONE emotion for all lines, no "..." pauses, THE VOICE laughs at the end
+while the camera is on THE ORGANIST, the radio is old, rusty and ugly, the final shot stops at a
+medium close-up. "To be continued" in the edit.
+Tag: image 1 ORGANIST, 2 DRIBBLE, 3 NECKLACE.
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western with grotesque creature characters, gritty, anamorphic, film grain. Six shots joined by hard cuts; the model sets the timing. Tense. Short dialogue as written; THE ORGANIST never speaks, his mask never moves. No subtitles, no humans, no text. No still frame.
+Look: a cramped windowless concrete control room inside a dam: a wall of cracked brass gauges and bent copper pipes, an open rusty iron door on the right, dim orange light, dust in the air. On a battered desk against the gauge wall sits an old, ugly radio set: a dented rusty iron box with a cracked glass dial glowing dull orange, a round speaker grille clogged with grime, a frayed cord, scorched knobs. Everything is old, rusty, filthy and broken; nothing is clean, new or modern. The only strong colour is the red scarf.
+Cast: @image 1 is THE ORGANIST: rusty steel mask, dark brown hat, red scarf, sand duster, black gloves, a short sawn-off double-barrel shotgun in his right hand, never a revolver, face never visible. @image 2 is DRIBBLE, the small shaking snail-man henchman, crouched low in the left foreground. @image 3 is the NECKLACE: copy that exact necklace, never a different one; THE ORGANIST holds it clenched in his left fist, the rusty chain hanging between his fingers. From here on everyone is called by name only; each appears only once in any shot.
+THE VOICE: a real man, deep and gravelly, faint Mexican accent, the same cold mocking tone in every line, speaking in a steady flow with no long pauses.
+THE RADIO CHANNEL: every word of THE VOICE is heard only through that old speaker, like a bad two-way radio from far away, never a clean recording: thin and tinny, no bass, harsh and distorted, constant hiss under it, crackle and pops on hard sounds, loud syllables clipping and breaking up, the signal fading and dipping mid-word, a click and a burst of static at the start and end of each line. A WOMAN is heard only once as a scream through the same broken speaker, never seen.
+SHOT 1. Close on the old radio: the cracked orange dial flickers and the speaker hisses and crackles to life. HARD CUT
+SHOT 2. Medium: THE ORGANIST turns his masked head toward the radio, the NECKLACE clenched in his left fist. DRIBBLE shrinks into his shell.
+THE VOICE (through the radio, cold and mocking): "Recognize that, gunman? I have your wife."
+HARD CUT
+SHOT 3. Close on the grimy speaker grille: through the static, a woman's distorted scream, cut off by a crackle. HARD CUT
+SHOT 4. Close on THE ORGANIST's left fist: his fingers crush tighter around the NECKLACE, the chain shaking. HARD CUT
+SHOT 5. Medium on the radio and THE ORGANIST beside it.
+THE VOICE (through the radio, same cold mocking tone): "Come and get her. I'm waiting for you in The Ribcage."
+HARD CUT
+SHOT 6. Medium close-up of THE ORGANIST from the chest up, the camera easing in only a little and stopping at head and shoulders: he stands completely still, the mask facing the radio, orange light flickering across the rust. Through the radio THE VOICE laughs, a low distorted crackling laugh, to the end.
+Audio: radio hiss and crackle building in shot 1; THE VOICE only through the broken speaker in shots 2 and 5; the woman's distorted scream in shot 3; the chain rattling in shot 4; THE VOICE's crackling laugh in shot 6; DRIBBLE's shaky breathing and a low hum from the dam under everything. No music.
+Avoid: no clean studio voice, no narrator voice, no change of tone between lines, no long pauses, no modern or new radio, no clean surfaces, no extreme close-up on the mask, no woman visible, no revolvers, no gunfire, no speaking from THE ORGANIST, no other characters, no face under the mask, no window, no blood, no text, no subtitles.

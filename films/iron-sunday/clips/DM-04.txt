@@ -1,0 +1,21 @@
+MODE: NEW CLIP — 30 s — 16:9 — house format, tag-once. The dam, clip 4: the way in (owner 2026-09-24).
+From the water to the control-room door only. He finds a hidden iron door behind the rubble at the foot
+of the dam (no outside stairs to the balcony exist in any render), climbs the inner stairwell, and stops
+outside the closed control-room door. Ends on a locked wide on the landing: the owner's screenshot
+builds DM-05 (DRIBBLE, "Boss isn't here", the locket); DM-06 is the radio ending.
+Shot 1 continues from DM-03's planned end: check against the DM-03 screenshot before rendering.
+Tag (HOOK removed; DRIBBLE not needed yet): image 1 ORGANIST, 2 STRIDER, 3 DM-03 screenshot.
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western, gritty, anamorphic, film grain. Seven shots joined by hard cuts; the model sets the timing. No dialogue, no subtitles, no humans, no text. No still frame.
+Place: @image 3 shows the foot of the dam a moment earlier. It is a reference only, never a frame. Keep it: the huge concrete dam, water pouring from under the big iron gate and spreading shallow across the canyon floor, the rusty balcony high above the gate, the pile of rubble at the foot of the dam on the right of the gate. Half hidden behind that rubble: a small rusty iron door in the concrete. Behind it, a narrow dim concrete stairwell with iron steps climbs up inside the dam to a landing and a closed rusty iron door with a small grimy window. Hard afternoon sun outside, dim inside. The only strong colours are the red scarf and the blue water.
+Cast: @image 1 is THE ORGANIST: rusty steel mask, dark brown hat, red scarf, sand duster, a short double-barrel shotgun in each hand, black gloves, face never visible. @image 2 is his black STRIDER: a gaunt, long-legged black reptile mount with hairless leathery hide, no mane, pale bone ridges down its neck, a narrow bony head with slit nostrils and split-claw feet. From here on they are called THE ORGANIST and the STRIDER. He is the only character in the stairwell; he appears only once in every shot.
+SHOT 1. Medium: THE ORGANIST wades through the shallow water toward the rubble at the foot of the dam, right of the gate; the STRIDER stands in the water behind him. HARD CUT
+SHOT 2. Close: behind the rocks, his black glove pushes a stone aside and uncovers a small rusty iron door set into the concrete, its lock crusted with rust. HARD CUT
+SHOT 3. Medium: he fires one barrel into the lock: a flash, sparks and smoke; he kicks the door and it swings inward onto darkness. HARD CUT
+SHOT 4. Medium inside the narrow stairwell, dim light from above: THE ORGANIST climbs the iron steps fast, a shotgun in each hand, dust falling around him. HARD CUT
+SHOT 5. Low, looking up the stairwell: he turns the corner of the stairs and keeps climbing toward a faint orange light at the top. HARD CUT
+SHOT 6. Medium at the top landing: a closed rusty iron door with a small grimy window, orange light flickering behind the glass. THE ORGANIST stops in front of it and stands completely still, listening; from behind the door comes a faint radio hiss and a soft frightened whimper. HARD CUT
+SHOT 7. Wide, locked, on the landing: the narrow concrete landing, the closed control-room door on the right with the orange light in its window, THE ORGANIST standing in front of it facing right, a shotgun in each hand, the dark stairwell dropping away on the left. Nobody moves. Hold.
+Physics: dust falls from the ceiling; his duster sways as he stops; the light behind the window flickers.
+Audio: splashing steps and roaring water in shot 1; stone scraping in shot 2; one shotgun blast, clanging metal and a creaking door in shot 3; boots ringing on iron steps, echoing, the water roar muffled, in shots 4 and 5; silence, a faint radio hiss and a soft whimper behind the door in shots 6 and 7. No music.
+Avoid: no attached image as a frame, no still first frame, no outside stairs or ladder up to the balcony, no door opening in shots 6 and 7, nobody else visible, no copy of THE ORGANIST, no ordinary horse, no speaking or mouth movement from THE ORGANIST, no face under the mask, no blood, no text, no subtitles.

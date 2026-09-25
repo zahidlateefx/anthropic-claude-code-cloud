@@ -1,0 +1,24 @@
+MODE: NEW CLIP — 30 s — 16:9 — house format, tag-once. OPENING REDO, clip 2, v5 (owner 2026-09-24).
+v4 render: CARRION rode on MANGE (the coyote was taken for a mount), MANGE sat in a truck, CALDERA ran on
+foot, no gallop sound. Cause: generic words ("reptile mounts", "rides") let the model mix up who is what.
+v5: unique names only (STRIDER, HOVER-TRUCK), a fixed WHO-IS-WHERE list tagging each member once with his
+exact seat, explicit bans on swaps, and the STRIDERS' gallop as loud as the engines.
+Tag: image 1 CALDERA, 2 CARRION, 3 TUSK, 4 DUNE, 5 MANGE, 6 STRIDER, 7 HOVER-TRUCK.
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western with grotesque creature characters, gritty, anamorphic, film grain. Five shots joined by hard cuts; the model sets the timing. The gang races at top speed in every shot; the camera tracks alongside at the same speed and never shakes. Medium shots only. No dialogue, no humans. No still frame. No text or letters anywhere in the frame.
+Look: a flat desert of pale cracked dust, jagged rust-red mountains ahead, two big pale moons, hard midday sun, dust streaming past. Everything old and rusty.
+STRIDER: @image 6 shows the STRIDER, the only kind of riding beast in this world. Three STRIDERS run here, exactly as that picture but coloured dark grey, grey and sand. HOVER-TRUCK: @image 7 . Two identical HOVER-TRUCKS run here.
+WHO IS WHERE, fixed in every shot, never swapped:
+CALDERA @image 1 sits in the saddle of the dark grey STRIDER, in the middle, a little ahead.
+CARRION @image 2 sits in the saddle of the grey STRIDER, left of CALDERA.
+MANGE @image 5 sits in the saddle of the sand STRIDER, right of CALDERA.
+TUSK @image 3 sits at the wheel of the left HOVER-TRUCK, on the far left.
+DUNE @image 4 sits at the wheel of the right HOVER-TRUCK, on the far right.
+Each is exactly as his own picture, in a grey duster and a flat black hat. They are riders and drivers, never ridden: nobody rides another gang member, only CALDERA, CARRION and MANGE ride STRIDERS, only TUSK and DUNE are in the HOVER-TRUCKS. From here on everyone is called by name only.
+SHOT 1. Side tracking medium from the right, the camera running between MANGE and DUNE's HOVER-TRUCK: MANGE in the saddle of the sand STRIDER at full gallop, low over its neck, a rifle across his back; CALDERA blurred beyond him, in the saddle of the dark grey STRIDER. HARD CUT
+SHOT 2. Side tracking medium from the left, the camera running between CARRION and TUSK's HOVER-TRUCK: CARRION in the saddle of the grey STRIDER at full gallop, hunched forward, his bald head stretched out; CALDERA blurred beyond him, in the saddle of the dark grey STRIDER. HARD CUT
+SHOT 3. Medium into the doorless cab of the left HOVER-TRUCK, tracking with it: TUSK grips the wheel with both hands, tusks bared, the cab shaking, dust blowing through. HARD CUT
+SHOT 4. Medium into the doorless cab of the right HOVER-TRUCK, tracking with it: DUNE drives with one hand, the other on a shotgun on the seat, cold eyes on the road. HARD CUT
+SHOT 5. Front tracking medium, the camera racing ahead: CALDERA in the saddle of the dark grey STRIDER at full gallop, both hands on the reins, the silver cross swinging on his chest, eyes on the horizon; CARRION and MANGE blurred a little behind him on their STRIDERS, the HOVER-TRUCKS on the outer ends.
+Audio: one constant sound bed through the whole clip, the same in every shot: the heavy thundering gallop of the three STRIDERS' split-claw feet pounding the hard ground, as loud as the engines, together with both HOVER-TRUCK engines roaring at full throttle, rattling panels and hissing valves; wind and snorting breath on top. No voices. No music.
+Avoid: nobody riding another gang member, MANGE never in a HOVER-TRUCK, CALDERA never on foot, no rider on foot, no swapped places, no gallop or engine sound dropping out, exactly five gang members, three STRIDERS and two HOVER-TRUCKS only, no snake or rabbit creatures, no ordinary horses, no laughing, no looking at the camera, no slow riding, no text, no subtitles.

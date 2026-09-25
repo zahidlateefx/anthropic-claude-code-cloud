@@ -1,0 +1,20 @@
+MODE: NEW CLIP — 30 s — 16:9 — TEST (blocking-reference method). New location: a small cantina.
+Three wide shots from three different angles reveal the room and all four positions; after shot 2
+nobody changes place, so every screenshot agrees. Ends on a still stand-off (no shooting).
+Screenshot points for the owner: end of SHOT 1 (doorway wide), SHOT 3 (reverse wide), SHOT 4 (high
+wide). Tag: image 1, 5, 6, 8, 10.
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western with animal characters, anamorphic, film grain. Five shots joined by hard cuts; the model sets the timing. Short dialogue as written, no subtitles, no humans, no text. Exactly four characters. The first frame is already the doorway wide with the three gunmen in it; no still frame.
+Look: a small square desert cantina of cracked adobe and warped planks, dusty and filthy. Fixed layout: the entrance door in the middle of the front wall; a long wooden bar along the LEFT wall; one round card table in the centre of the room with three chairs; a single window in the RIGHT wall; a narrow wooden staircase in the back-right corner going up to a small landing. Hard daylight comes through the window from the right; one oil lamp hangs over the card table. Everything else in shadow. The only red is the scarf.
+Cast: THE ORGANIST @image 6 , rusty steel mask, dark brown hat, red scarf, sand duster, black gloves, two short shotguns, face never visible. CALDERA @image 5 , silver cross, the tallest. FANG @image 8 . TUSK @image 10 . Each exactly as his sheet. Heights @image 1 .
+Positions, fixed from shot 2 to the end: CALDERA @image 5 seated at the card table, on the far side, facing the entrance. FANG @image 8 standing at the middle of the bar on the left, facing the table. TUSK @image 10 standing at the window on the right, facing the table. THE ORGANIST @image 6 standing just inside the entrance, facing CALDERA across the table.
+SHOT 1. Wide from the entrance at eye level, locked, the whole room visible: bar on the left, table in the centre, window on the right, staircase in the back-right corner. CALDERA @image 5 sits at the table dealing cards, FANG @image 8 leans on the bar, TUSK @image 10 stands at the window. The door behind the camera creaks open; all three look up at the camera. HARD CUT
+SHOT 2. Medium, locked, on the entrance from inside. THE ORGANIST @image 6 walks in through the door and stops one step inside, facing the table. HARD CUT
+SHOT 3. Reverse wide from behind CALDERA's chair at the back of the room, looking toward the entrance, locked: CALDERA's back in the foreground at the table, THE ORGANIST @image 6 standing inside the entrance facing him, FANG @image 8 at the bar now on the RIGHT of this frame, TUSK @image 10 at the window now on the LEFT of this frame. Nobody moves. HARD CUT
+SHOT 4. High wide from the staircase landing in the back-right corner, looking down across the whole room, locked: the bar, the table, the window and the entrance all visible, and all four characters in their places. Nobody moves. HARD CUT
+SHOT 5. Medium two-shot across the table: CALDERA @image 5 seated, THE ORGANIST @image 6 standing at the entrance behind the table's far edge. CALDERA lays down his cards.
+CALDERA (slow, amused): "You're a long way from your grave, friend."
+Hold to the end. Nobody draws.
+Physics: dust hangs in the window light; the lamp over the table sways slightly after the door opens; the cards slide on the table.
+Audio: distance-true natural sound in a small wooden room. The door creaking open in shot 1, boots and spurs on planks in shot 2, cards shuffling, a fly buzzing, the lamp chain creaking, CALDERA's line in English in shot 5, wind outside. No music.
+Avoid: no still first frame, no fifth character, no character changing place after shot 2, no gunfire, no drawing of weapons, no mirror-swapped room (the bar is always on the left wall seen from the entrance), no face or skin under the mask, no blood, no text, no subtitles.

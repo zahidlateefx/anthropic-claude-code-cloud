@@ -1,0 +1,21 @@
+MODE: NEW CLIP (references) — duration 30 s — 16:9
+ACT 1 SETUP, version 2 (rule 20.5): the one wide, the walk, the mask, the weapons — and it ENDS on
+the beat before the first shot. The fight itself is SD-C1 to SD-C4, one kill per 10 s clip, one
+character per frame. Hard cut in from SD-A.
+Ends on: the two sawn-off shotguns snapping shut in the gloved hands, at the organ case.
+Attach order: image5 = CALDERA, image6 = ORGANIST, image7 = PIPE ORGAN, image8 = FANG,
+image9 = CARRION, image10 = TUSK, image11 = SKITTER, image12 = DUNE, image13 = MANGE.
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western, gritty, film grain, anamorphic. Four shots, hard cuts at the timecodes, each cut on a movement. Camera slow and steady, never handheld. Short dialogue as written, no subtitles, no humans or text.
+Look: a ruined desert mission church, everything old, broken and filthy. Cracked pale adobe patched with rusty corrugated iron, broken grey pews along a dirt aisle strewn with rubbish, bullet holes, timber doors at the near end, and a battered pipe organ with one amber oil lamp at the far end. Desaturated dust, bone and rust; the only red is the scarf. In every shot there are two lights and no others: hard white daylight through window slits in the left wall, falling from the left as dust shafts, and the amber lamp at the right; everything else is deep shadow. The camera never crosses the aisle: daylight always left, lamp always right, organ always far end.
+References: @image6 THE ORGANIST, rusty steel mask with one dark glass slit, dark brown hat, red scarf, sand duster, black gauntlet gloves; face never visible, hands gloved; he always faces screen-right. @image7 the organ. @image5 CALDERA, black-and-orange hide, gold teeth, silver cross, 2.4 m and the tallest. Six different gunmen, never mixed: @image8 FANG, @image9 CARRION, @image10 TUSK, @image11 SKITTER, @image12 DUNE, @image13 MANGE.
+[0-8s] The only wide shot of this church in the film. Master wide from the back of the nave, 40 degree, camera low at pew height, locked. The doors are kicked in and slam against the walls, daylight floods the aisle, dust boils up. The six gunmen come down the aisle and stop between the pews, weapons up, CALDERA (@image5) walking on past them toward the organ. THE ORGANIST (@image6) sits at the far organ, back turned, playing. Nobody fires.
+HARD CUT
+[8-15s] Tracking medium with CALDERA (@image5) on the last of the aisle, 35 degree, camera close beside him at shoulder height, CALDERA alone in frame at the right, everything behind him out of focus and almost black. Daylight crosses him from the left in bars. He grins with gold teeth, tongue flicking, then lays a hand flat on the organ case.
+CALDERA: "You are in my church, friend."
+HARD CUT
+[15-22s] Tight front close on the steel mask (@image6) alone, 29 degree, locked. The lamp burns as one bright reflection in the dark glass slit. No face visible. The organ stops. Two dead keys click. Dust drifts. He holds still for four seconds, then his head tilts one degree toward screen-right.
+HARD CUT
+[22-30s] Close insert on the organ case (@image7), 40 degree, locked, only the case, the lamp and the gloved hands in frame. The black gauntlet gloves lift the lid, draw two sawn-off double-barrel shotguns from among the brass pipes, let the lid drop, break both barrels open, load them and snap them shut. The clip ends on the snap.
+Audio: only natural sound: the wheezing pipe organ with leaking bellows and two dead clicking notes, long stone reverb, until it stops at 18s; the doors banging on stone at 1s; boots and spurs on dirt; CALDERA's footsteps and one short English line at 12s; four seconds of near silence with wind through the slits; the lid creaking, two shells loading, both barrels snapping shut at 29s. Only CALDERA speaks. No gunfire. No background music.
+Avoid: no second wide, no other cuts, no handheld or shake, no flip of screen direction, no light from the right, no face or skin under the mask, no bare hands, no hat removed, no gunfire, no one hit, no two gunmen alike, no gunman in frame after 8s, no slow motion, no text, no subtitles.

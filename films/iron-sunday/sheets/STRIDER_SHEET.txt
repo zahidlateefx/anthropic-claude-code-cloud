@@ -1,0 +1,8 @@
+NEW image 2 v2 (owner 2026-09-24): SAME design as the old DUST-HORSE sheet so earlier clips still
+match; only the BLACK variant, one creature, and the word "horse" removed. v1 (lizard head, horns,
+tail) rejected: it would have changed the mount completely.
+ATTACH when generating: the old DUST-HORSE sheet (old image 2).
+
+CREATURE REFERENCE SHEET for a film animal called the STRIDER, the black riding mount of a masked gunman in a photoreal CG sci-fi western. Copy the creature on the attached sheet exactly: the same body, head, bone ridges, feet and saddle. Show only its BLACK colour variant, one creature, and no other colour. Annotated sheet with five views on one plain mid-grey background, flat shadowless studio lighting, photoreal leather-hide texture: full-body side view, full-body front view, full-body rear view, a head close-up, and a close-up of one foot.
+The STRIDER is a gaunt, long-legged reptilian riding beast about 2.2 m tall at the head, with dry black leathery hide, hairless everywhere, no mane and no tail hair, a row of pale bone ridges running down the back of the neck, a narrow bony head with small deep-set eyes and slit nostrils, and split-claw feet instead of solid hooves. It carries a worn western saddle with a high cantle, a rope-patched bridle, and battered leather saddlebags. All the tack is cracked, sun-bleached and dirty.
+Small hand-lettered labels name the bone ridges, the split-claw foot, the saddle and the saddlebags, and give the height "STRIDER 2.2 m". These labels are the only text in the image. One creature only, black only. No rider, no scenery, no background.

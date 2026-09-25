@@ -1,0 +1,7 @@
+SHOTGUNS prop sheet v2 (owner 2026-09-24): copy the two sawn-off shotguns shown inside the open lid on
+the old ORGAN prop sheet, so the guns match the organ and stop changing between clips (revolvers kept
+appearing). Nano Banana: attach only the ORGAN prop sheet. First used in CH-02.
+
+PROP REFERENCE SHEET for a film prop, made from the attached organ picture. Inside the open lid of the organ in the attached picture lie two short sawn-off double-barrel shotguns. Copy exactly those two shotguns, the same shape, barrels, hammers, grips, wear and colours, and show them on their own: no organ, nothing else.
+One plain mid-grey background, flat shadowless studio lighting, photoreal metal and wood texture, four views: both shotguns side by side from the side, one from the top showing its two barrels side by side, one broken open at the hinge showing the two empty chambers, and a close-up of two brass shotgun shells.
+Old, rusty, dented and ugly, nothing clean, new or modern. No text anywhere. No hands, no people, no organ, no background.

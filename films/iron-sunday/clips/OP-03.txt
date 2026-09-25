@@ -1,0 +1,26 @@
+MODE: NEW CLIP — 30 s — 16:9 — house format, tag-once, WHO-IS-WHERE format (rule 66). OPENING REDO,
+clip 3 (owner 2026-09-24). Replaces SD-01C. The IRON MISSION appears at the foot of the jagged rust-red
+mountains seen in OP-01; the gang races in, brakes in the yard, gets down, walks to the church doors and
+stops in front of them, the organ heard faintly inside. Ends on a locked wide at the doors: screenshot
+for the church redo (IN-01).
+Tag: image 1 CALDERA, 2 CARRION, 3 TUSK, 4 DUNE, 5 MANGE, 6 STRIDER, 7 HOVER-TRUCK, 8 IRON MISSION.
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western with grotesque creature characters, gritty, anamorphic, film grain. Seven shots joined by hard cuts; the model sets the timing. No dialogue, no humans. No still frame. No text or letters anywhere in the frame.
+Look: a flat desert of pale cracked dust, jagged rust-red mountains, two big pale moons, hard midday sun. @image 8 is the IRON MISSION, a ruined desert church: copy it exactly, cracked adobe patched with rusty iron, a square bell tower, heavy closed timber doors, a dirt yard inside a low broken wall. It stands alone at the foot of the jagged mountains. Everything old and rusty.
+STRIDER: @image 6 shows the STRIDER, the only kind of riding beast in this world; three run here, dark grey, grey and sand. HOVER-TRUCK: @image 7 ; two identical ones run here.
+WHO IS WHERE while riding, fixed, never swapped:
+CALDERA @image 1 in the saddle of the dark grey STRIDER, in the middle, a little ahead.
+CARRION @image 2 in the saddle of the grey STRIDER, left of CALDERA.
+MANGE @image 5 in the saddle of the sand STRIDER, right of CALDERA.
+TUSK @image 3 at the wheel of the left HOVER-TRUCK, far left.
+DUNE @image 4 at the wheel of the right HOVER-TRUCK, far right.
+Each exactly as his own picture, grey duster, flat black hat. Nobody rides another gang member. From shot 3 on all five are on foot. From here on everyone is called by name only.
+SHOT 1. High shot flying behind the gang: the five race in their line across the desert toward the IRON MISSION, which grows ahead of them at the foot of the jagged mountains. HARD CUT
+SHOT 2. Low wide at the gap in the broken yard wall: the gang bursts into the dirt yard; the three STRIDERS dig in their claws and skid to a stop, the two HOVER-TRUCKS brake hard with a flare of their thrusters; a big cloud of dust rolls over the yard. HARD CUT
+SHOT 3. Medium: CALDERA swings down from the saddle of the dark grey STRIDER, his boots hitting the dust, the silver cross swinging. HARD CUT
+SHOT 4. Medium: CARRION and MANGE climb down from their STRIDERS; behind them TUSK and DUNE step out of the doorless cabs of the HOVER-TRUCKS as the engines die. HARD CUT
+SHOT 5. Medium from behind, low: the five walk together across the yard toward the church doors, CALDERA in front, the others fanned out behind him, dust drifting. HARD CUT
+SHOT 6. Medium close on the heavy timber doors as CALDERA stops in front of them; he tilts his head, listening. HARD CUT
+SHOT 7. Wide, locked, from behind them in the yard: the five stand in a line in front of the closed church doors, CALDERA in the middle, CARRION and TUSK on his left, MANGE and DUNE on his right; the three STRIDERS and two HOVER-TRUCKS standing still behind them in the yard; the bell tower and the jagged mountains above. Nobody moves. Hold.
+Audio: shots 1 and 2: one constant bed of the three STRIDERS' thundering gallop, as loud as the two HOVER-TRUCK engines roaring; claws scraping and engines braking in shot 2; engines dying down and boots in the dust in shots 3 and 4; footsteps and wind in shot 5; from shot 6 on, faint from inside the church, a wheezing pipe organ with leaking bellows and two dead notes that click, over wind. No voices. No music score.
+Avoid: nobody riding another gang member, MANGE never in a HOVER-TRUCK, no rider staying mounted after shot 3, the doors never open, exactly five gang members, three STRIDERS and two HOVER-TRUCKS only, no other creatures, no snake or rabbit creatures, no ordinary horses, no laughing, no text, no subtitles.

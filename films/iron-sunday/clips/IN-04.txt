@@ -1,0 +1,19 @@
+MODE: NEW CLIP (references) — duration 10 s — 16:9
+INTERIOR clip 4 of 6, version 2. FIGHT, two kills in ten seconds, Hollywood pace (rule 22.3):
+fire — hit — pivot, fire — hit. Four shots, 2.5 s each. One character per frame.
+Hard cut in from IN-03 (barrels snapping shut). Ends on: CARRION dropping out of frame, dust hanging.
+Tag: image1, image6, image7, image9, image10, image14.
+
+10-second clip, 16:9, photoreal cinematic CG creature-feature western, gritty, film grain, anamorphic. Four shots, hard cuts at 0:02.5, 0:05 and 0:07.5, each cut on a gunshot or an impact. Camera locked in every shot. Exactly one character in each shot, never two. Fast: every action completes inside its shot. No dialogue, no subtitles, no humans or text.
+Look: @image14 is a design reference for the room only. It is not a frame of this video and no shot reproduces its view. Use it for the walls, pews, organ, lamp and the direction of the light. Two lights and no others: hard white daylight through window slits at the left, falling from the left as dust shafts, and the amber lamp on the organ at the right; everything else deep shadow. Desaturated dust, bone and rust; the only red is the scarf and blood.
+References: @image6 THE ORGANIST, rusty steel mask with one dark glass slit, dark brown hat, red scarf, sand duster, black gauntlet gloves, two sawn-off shotguns; face never visible, hands gloved; he always faces and fires screen-right. @image7 the organ behind him. @image10 TUSK the heavy boar gunman, @image9 CARRION the tall stooped buzzard gunman, each exactly as his sheet; they face screen-left. @image1: heights.
+[0-2.5s] Medium of THE ORGANIST (@image6) alone, 35 degree, locked at chest height, standing beside the organ (@image7) with the lamp at the right edge, the room behind him black. He is already up and turning: he snaps one sawn-off level and fires toward screen-right. The muzzle flash lights the dust.
+HARD CUT
+[2.5-5s] Medium of TUSK (@image10) alone, 35 degree, locked at chest height, a broken pew behind him. He is hit from the left the instant the shot begins: his chest bursts in a spray of red, the shotgun leaves his hands, and his whole heavy body is thrown back over the pew.
+HARD CUT
+[5-7.5s] Medium of THE ORGANIST (@image6) alone, same set-up, the lamp at the right. He pivots a quarter turn on his front foot without lowering the gun and fires the second barrel toward screen-right. Smoke rolls off the muzzle.
+HARD CUT
+[7.5-10s] Medium of CARRION (@image9) alone, 35 degree, locked, a pillar behind him. Hit from the left: he folds forward over the wound, the rifle clatters down, and he drops straight out of the bottom of frame. Dust hangs in the shaft of light where he stood.
+Physics: each shot kicks the short barrels up and back and the ORGANIST's shoulder absorbs it; a man of TUSK's weight is lifted off his feet by the blast and the pew splinters under him; CARRION folds at the waist and falls under his own weight; dust and splinters lift and hang in the light shafts.
+Audio: only natural sound, distance-true: two enormous sawn-off shotgun blasts, close and full, at 1.5s and 6s, each with a long stone reverb tail; the second barrel's flat click before it fires; TUSK's body crashing through a timber pew, wood splintering, a grunt cut short; CARRION's rifle clattering on packed dirt and his body hitting the floor; dust settling; wind through the window slits, far and thin. Nobody speaks. No background music.
+Avoid: no empty first frame, no second character in any shot, no wide shot, no other cuts, no handheld or shake, no face or skin under the mask, no bare hands, no hat removed, no flip of screen direction, no light from the right, no slow motion, no hesitation, no blood on the lens, no text, no subtitles.

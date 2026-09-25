@@ -1,0 +1,26 @@
+MODE: EXTEND of SD-02 (the 30 s version the owner kept) — duration 30 s of new footage — 16:9
+The confrontation breaks. The mask, the shotguns, the first kill, the fight starting.
+The first sentence has two versions: use the one that matches the actual last frame of the render.
+Ends on: CALDERA crouched behind the organ, THE ORGANIST standing beside the bench with both
+shotguns up, TUSK dead over a broken pew, five gunmen firing from behind the pews, smoke in the
+dust shafts.
+Attach: the SD-02 clip as the video to extend, plus image1 = SIZE COMPARISON, image5 = CALDERA,
+image6 = ORGANIST, image7 = PIPE ORGAN, image8 = FANG, image9 = CARRION, image10 = TUSK,
+image11 = SKITTER, image12 = DUNE, image13 = MANGE.
+Prompt body: 3,806 characters.
+
+Continue from the end of the attached clip. CALDERA stands over the seated ORGANIST with one hand flat on the organ case beside the amber lamp, the organ has just stopped, and the six gunmen are spread along the aisle behind them.
+30-second clip, 16:9, photoreal cinematic CG creature-feature western, gritty, film grain, anamorphic. Four shots, hard cuts at the timecodes, each cut landing on a movement. Slow steady camera, never handheld. No dialogue, no subtitles, no humans, no on-screen text.
+Look: inside a ruined desert mission church. Cracked pale adobe walls patched with rusty corrugated iron, broken grey pews along a packed dirt aisle strewn with dust, bones and rubbish, cobwebs, bullet holes, timber doors at the near end, a battered pipe organ with bent brass pipes at the far end with one amber oil lamp on it. Everything old, broken and filthy, nothing clean or new. Desaturated dust, bone and rust; the only red is the ORGANIST's scarf and blood.
+Fixed rule in every shot: exactly two lights, hard white daylight through window slits in the left wall falling from the left as dust shafts, and the amber lamp on the organ at the right of frame; everything else in deep shadow. The camera never crosses the aisle: daylight always left, lamp always right, organ always far end, doors always behind the camera.
+References: @image6 THE ORGANIST, riveted rusty steel mask with one dark glass slit, dark brown flat-brimmed hat, red scarf, sand canvas duster, black gauntlet gloves; face never visible, hands always gloved. @image5 CALDERA, beaded black-and-orange hide, gold teeth, heavy silver cross. @image7 the organ. Six different gunmen, never mixed: @image8 FANG rattlesnake, @image9 CARRION buzzard, @image10 TUSK boar, @image11 SKITTER jackrabbit, @image12 DUNE lizard, @image13 MANGE coyote. @image1 size comparison, heights only.
+Cast: exactly eight creatures, no others. In each shot only the named character moves.
+[0-8s] Tight front close shot of the steel mask (@image6), 29 degree, camera locked, CALDERA a blurred dark bulk at the right of frame. The amber lamp burns as one small bright reflection in the narrow dark glass slit. Nothing of a face is visible. Dust drifts across the frame. He holds completely still for six seconds in the silence, then his head tilts one degree. Cut on the tilt.
+HARD CUT
+[8-14s] Close insert on the organ case (@image7) from the side, 40 degree, camera locked, only the case and the lamp in frame. The black gauntlet gloves reach up, lift the wooden lid and draw two sawn-off double-barrel shotguns out from among the brass pipes. The lid drops shut. The gloves break both barrels open, load them and snap them closed. Cut on the snap.
+HARD CUT
+[14-22s] Medium shot at the organ, 35 degree, camera locked at chest height, framed tight on THE ORGANIST (@image6) with the organ behind him and the room beyond thrown far out of focus. He stands up from the bench to his full height, turns, and fires one barrel across the frame. The muzzle flash lights the dust. TUSK the boar gunman (@image10) is thrown back over a broken pew in a spray of red and disappears below frame. Cut on the blast.
+HARD CUT
+[22-30s] Medium low shot beside the organ, 35 degree, camera locked, CALDERA (@image5) at the right of frame dropping into a crouch behind the organ case with the lamp rocking above him, THE ORGANIST (@image6) standing at the left of frame with both shotguns up. Behind them, far out of focus in the dark, five gunmen scatter behind the pews and fire back. Muzzle flashes stab through the dust shafts and smoke fills them.
+Audio: only natural sound: six seconds of near silence with only wind through the window slits and dust settling; the wooden lid creaking, steel barrels sliding on wood, two shells loading, barrels snapping shut; one enormous shotgun blast with a long stone reverb tail at 21s; a heavy body hitting a pew, wood splintering; boots scrambling on dirt, rifle bolts working, return fire cracking off stone, lead hitting brass pipes. Nobody speaks. No background music.
+Avoid: no wide shot of the church, no other cuts, no handheld or camera shake, no flip of screen direction, no light from the right, no face or skin under the mask, no bare hands on the ORGANIST, no hat removed, no speech, no laughing, no two gunmen alike, no gunman other than TUSK being hit, no slow motion, no blood on the lens, no text, no subtitles.

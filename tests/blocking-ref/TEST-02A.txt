@@ -1,0 +1,18 @@
+MODE: NEW CLIP — 30 s — 16:9 — TEST METHOD A: one Nano Banana blocking image (image 16 = NANO-B1).
+Continues the TEST-01 stand-off. Four characters. Ends with CALDERA gone through the back door and a
+high wide showing everyone where they fell — the geometry check.
+Tag: image 1, 5, 6, 8, 10, 16.
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western with animal characters, anamorphic, film grain. Seven shots joined by hard cuts; the model sets the timing. Fast action. No dialogue, no subtitles, no humans, no text. The first frame is already moving; no still frame, no attached image shown as a frame.
+Location and positions: @image 16 is the room and where everyone stands. It is a reference only, never a frame of this video. Keep its layout in every shot: saloon swing doors in the front wall, the bar along the left wall with the staircase in the front-left corner, the round card table under the hanging lamp in the centre, two windows in the right wall, a closed plank door in the back wall. Keep each character exactly where @image 16 puts him until he moves in this clip. Hard sunlight from the right-wall windows; the lamp over the table; deep shadow elsewhere. The only red is the scarf.
+Cast: THE ORGANIST @image 6 , rusty steel mask, dark brown hat, red scarf, sand duster, black gloves, a short double-barrel shotgun in each hand, face never visible. CALDERA @image 5 , silver cross. FANG @image 8 . TUSK @image 10 . Each exactly as his sheet. Heights @image 1 . Exactly four characters.
+SHOT 1. Wide over THE ORGANIST's shoulder from the entrance, the camera already drifting slowly forward: FANG @image 8 at the bar on the left, CALDERA @image 5 seated at the table in the centre, TUSK @image 10 by the right wall between the windows. CALDERA's hand slides off his cards toward his belt. HARD CUT
+SHOT 2. Medium of FANG @image 8 at the bar: he pulls his revolver. HARD CUT to a medium of THE ORGANIST @image 6 at the entrance firing the left-hand gun toward the bar. HARD CUT
+SHOT 3. Medium of FANG @image 8 : the blast throws him backward along the bar; bottles burst on the shelves; he falls behind the bar and lies still. HARD CUT
+SHOT 4. Medium of TUSK @image 10 by the windows raising his shotgun. HARD CUT to THE ORGANIST @image 6 firing the right-hand gun toward the right wall. HARD CUT
+SHOT 5. Medium of TUSK @image 10 : the blast slams him against the wall between the two windows; he slides down to the floor and lies still in the sunlight. HARD CUT
+SHOT 6. Medium of CALDERA @image 5 alone: he kicks the card table over, chips and cards flying, and runs to the plank door in the back wall and out through it. The door swings. HARD CUT
+SHOT 7. High wide from above the entrance looking down into the room, as in @image 16 : FANG lying behind the bar, TUSK lying under the windows, the table on its side under the swinging lamp, the back door swinging open onto daylight. THE ORGANIST @image 6 walks from the entrance across the room toward the back door. Hold.
+Physics: each blast kicks the gun into the shoulder; glass and liquid burst from the shelves; bodies fall with full weight; the table crashes over and chips scatter; the lamp swings on its chain.
+Audio: distance-true sound in a small wooden room. A revolver cocked in shot 2, two shotgun blasts close and loud, bottles smashing, bodies hitting wood, the table crashing, CALDERA's boots and the back door banging, slow boots and spurs in shot 7, the lamp chain creaking. No music.
+Avoid: no attached image as a frame, no still first frame, no fifth character, no character in a place different from @image 16 before he moves, no mirror-swapped room, no face or skin under the mask, the fallen never stand again, no blood, no gore, no text.

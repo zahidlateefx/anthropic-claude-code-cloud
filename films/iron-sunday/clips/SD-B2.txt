@@ -1,0 +1,15 @@
+MODE: EXTEND of SD-B1 — duration 15 s of new footage — 16:9
+ACT 1 SETUP part 2 of 2. The mask, the organ stopping, the shotguns. Ends on the beat before the
+first shot: both barrels snapping shut. Fight follows as SD-C1..C4.
+Attach: the SD-B1 clip as the video to extend, plus image6 = ORGANIST, image7 = PIPE ORGAN,
+image14 = MISSION NAVE interior. CALDERA is only a blur at the edge here; his sheet is not needed.
+
+Continue from the end of the attached clip. CALDERA's hand is flat on the organ case beside the amber lamp, THE ORGANIST is seated at the organ with his back turned, still playing.
+15-second clip, 16:9, photoreal cinematic CG creature-feature western, gritty, film grain, anamorphic. Two shots, one hard cut at 0:07 on a movement. Camera locked in both shots. No dialogue, no subtitles, no humans or text.
+Look: @image14 is the room; keep its organ, lamp, walls and light exactly as drawn. Two lights and no others: hard white daylight from the left as dust shafts, and the amber lamp on the organ at the right; everything else deep shadow. Desaturated dust, bone and rust; the only red is the scarf.
+References: @image6 THE ORGANIST, rusty steel mask with one dark glass slit, dark brown hat, red scarf, sand duster, black gauntlet gloves; face never visible, hands gloved; he faces screen-right. @image7 the organ.
+[0-7s] Tight front close on the steel mask (@image6) alone, 29 degree, locked, CALDERA no more than a dark blur at the right edge. The lamp burns as one bright reflection in the dark glass slit. No face visible. The organ stops. Two dead keys click. Dust drifts. He holds still for four seconds, then his head tilts one degree toward screen-right.
+HARD CUT
+[7-15s] Close insert on the organ case (@image7), 40 degree, locked, only the case, the lamp and the gloved hands in frame. The black gauntlet gloves lift the lid, draw two sawn-off double-barrel shotguns from among the brass pipes, let the lid drop, break both barrels open, load them and snap them shut. The clip ends on the snap.
+Audio: only natural sound: the wheezing pipe organ with leaking bellows and two dead clicking notes, long stone reverb, until it stops at 3s; four seconds of near silence with wind through the window slits; the lid creaking, steel sliding on wood, two shells loading, both barrels snapping shut at 14s. Nobody speaks. No gunfire. No background music.
+Avoid: no wide shot, no other cuts, no handheld or shake, no flip of screen direction, no light from the right, no face or skin under the mask, no bare hands, no hat removed, no gunfire, no second character sharp in frame, no text, no subtitles.

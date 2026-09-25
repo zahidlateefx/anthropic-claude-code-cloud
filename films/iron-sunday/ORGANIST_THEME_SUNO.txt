@@ -1,0 +1,15 @@
+THE ORGANIST theme for Suno, v2 (owner 2026-09-25): v1 was too fast and kept speeding up / building.
+v2: one steady medium tempo and one steady energy from start to end, no build, no drop, no big ending, so it
+can sit under montages and fights and be faded out anywhere. Instrumental.
+
+=== STYLE box
+Spaghetti western theme, instrumental, steady 104 BPM from start to end, D minor. A wheezing old church pipe organ plays a dark, catchy five-note riff as the main hook, repeating over a steady galloping drum groove that never speeds up. Twangy baritone electric guitar with tremolo, nylon guitar strums, a lone whistle and a mariachi trumpet answering the organ, soft choir "ahh" pads, dusty 1960s analog mix, wide stereo, warm low end. Cool, dangerous, confident swagger. Same tempo, same rhythm and same energy the whole track, no build-up, no drop, no tempo change, no big finale; loop-friendly and easy to fade out at any point.
+
+=== LYRICS box (structure only, instrumental)
+[Instrumental]
+[Theme: organ riff over the steady gallop groove]
+[Theme: twang guitar joins, same groove]
+[Theme: whistle and trumpet answer the organ, same groove]
+[Theme: organ riff again, same groove]
+[Theme: choir pad under the organ, same groove]
+[Theme: organ riff, same groove, continues]

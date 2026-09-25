@@ -1,0 +1,17 @@
+Radio tower sheets. Nothing attached when generating. Numbers: 18 HUSK, 19 KNUCKLE, 20 SICKLE
+(slot 18 was the SA-02 screenshot, no longer needed). 21 = RT-01 reference-wide screenshot later.
+
+=== image 18 HUSK
+CHARACTER REFERENCE SHEET for a film character called HUSK, an old moth-man radio operator in a photoreal CG creature-feature western. Annotated sheet on one plain mid-grey background, flat shadowless studio lighting, photoreal fur and wing texture: full-body front view, full-body side view, full-body back view, a head close-up and a close-up of one hand.
+HUSK is about 1.5 metres tall, thin and stooped, an old moth-man covered in dusty grey-brown fur, with two huge dark round compound eyes, two long feathery antennae sticking up between the cups of a pair of big old leather radio headphones, and ragged torn moth wings folded down his back. His thin four-fingered hands tremble. He wears a stained collarless shirt, a frayed knitted vest and baggy patched trousers with braces. He carries no weapon. Everything is patched, sun-bleached and filthy, nothing clean or new.
+Small hand-lettered labels name the antennae, the headphones, the compound eyes and the folded wings, and give the height "HUSK 1.5 m". These labels are the only text in the image. No scenery, no background.
+
+=== image 19 KNUCKLE
+CHARACTER REFERENCE SHEET for a film character called KNUCKLE, a spiny beetle guard in a photoreal CG creature-feature western. Annotated sheet on one plain mid-grey background, flat shadowless studio lighting, photoreal chitin texture: full-body front view, full-body side view, full-body back view, a head close-up and a close-up of one hand.
+KNUCKLE is about 1.9 metres tall, wide and heavy, upright on two legs, with a dull black-brown armoured shell covered in short thick spikes across his back and shoulders, a low heavy head with one short curved horn and small shining black eyes, and thick clawed hands. He wears a torn grey poncho, a crossed ammunition belt, a flat black hat and dusty boots, and carries a long lever-action rifle. Everything is patched, sun-bleached and filthy, nothing clean or new.
+Small hand-lettered labels name the spikes, the horn, the ammunition belt and the rifle, and give the height "KNUCKLE 1.9 m". These labels are the only text in the image. No scenery, no background.
+
+=== image 20 SICKLE
+CHARACTER REFERENCE SHEET for a film character called SICKLE, a praying-mantis gunman in a photoreal CG creature-feature western. Annotated sheet on one plain mid-grey background, flat shadowless studio lighting, photoreal chitin texture: full-body front view, full-body side view, full-body back view, a head close-up and a close-up of one hand.
+SICKLE is about 2.1 metres tall, very thin and upright, a praying mantis with a dusty sand-brown body scarred with old cracks, a small triangular head with two large pale eyes, long folded spiked forearms, and a second pair of thin hands that hold a long bolt-action rifle. He wears a long dusty grey duster split at the back and a flat black hat with a torn brim. Everything is sun-bleached and filthy, nothing clean or new.
+Small hand-lettered labels name the spiked forearms, the eyes, the duster and the rifle, and give the height "SICKLE 2.1 m". These labels are the only text in the image. No scenery, no background.

@@ -1,0 +1,27 @@
+YouTube upload text for EP01, v2 (owner 2026-09-25): matched to the reference channel's pattern (Crazy
+Taco Man: "WANTED | Sci-Fi Western Short Film", "WANTED RELOADED | Chapter Two | Sci-Fi Western Short Film").
+Pattern: title "NAME | Chapter | Sci-Fi Western Short Film"; first line "X is a ... sci-fi western short
+film, told through ..."; world/premise paragraph; "Expect ..." paragraph; universe line; like/comment/
+subscribe line; AI-tools paragraph stressing human authorship; exactly three hashtags; a long tags list.
+Written in our own words.
+
+=== TITLE
+THE ORGANIST | Episode 1: Iron Sunday | Sci-Fi Western Short Film
+
+=== DESCRIPTION
+Three years ago, a gang of outlaws buried a man under the floor of a ruined desert church. This Sunday, someone is playing its old organ again.
+
+Under two moons, the gang rides back to finish the job. Waiting for them at the organ is a stranger in a rusty iron mask, with two sawn-off shotguns and no words to waste.
+
+Expect creature gunslingers, rusty hover-trucks, reptile riders, fast shotgun fights, and a masked stranger who never runs. Every outlaw he takes down leads him one step closer to the man on the radio.
+
+This is Episode 1 of THE ORGANIST. Episode 2, THE RIBCAGE, is coming next.
+
+Like, comment your favorite moment, and subscribe so you don't miss the next episode.
+
+The visuals and music in this film were created with the help of AI tools, including Seedance 2.5, Nano Banana and Suno. The story, the characters, the world, the direction and every creative decision are 100% human. AI was used as a production tool, and the final film was shaped by hand through editing, sound design and mixing.
+
+#SciFiWestern #WesternShortFilm #ShortFilm
+
+=== TAGS (YouTube tags box)
+The Organist, The Organist Episode 1, Iron Sunday, Sci-Fi Western, Sci-Fi Western Short Film, Western Short Film, Spaghetti Western, Space Western, Weird West, Creature Western, Creature Feature, Masked Gunslinger, Revenge Western, Cinematic Short Film, Action Short Film, Dialogue Free Short Film, Visual Storytelling, AI Short Film, AI Film, AI Filmmaking, Seedance, Nano Banana, Suno

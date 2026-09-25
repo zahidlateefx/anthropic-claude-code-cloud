@@ -1,0 +1,20 @@
+MODE: NEW CLIP — 15 s — 16:9 — house format, tag-once. CHURCH FIGHT FIX (owner 2026-09-25): replaces
+only shots 1-3 of the CH-02 render; the rest of that render (CALDERA riding off, shot off his STRIDER,
+the camera on THE ORGANIST) is kept. Fixes: the render showed one single fire and everyone falling, and
+CALDERA died inside. Now two separate double blasts, each dropping one pair; CALDERA is never hit and
+runs at once to his STRIDER; then the reload walk toward the doors as in the last render.
+Edit: CH-01 -> CH-02A -> CH-02 render from its shot 4.
+Tag: image 1 CALDERA, 2 CARRION, 3 TUSK, 4 DUNE, 5 MANGE, 6 ORGANIST, 7 ORGAN, 8 CH-01 last frame,
+9 TWIN PSALMS, 10 clean yard frame, 11 STRIDER.
+
+15-second clip, 16:9, photoreal cinematic CG creature-feature western with grotesque creature characters, gritty, anamorphic, film grain. Three shots joined by hard cuts; the model sets the timing. Fast. No dialogue, no humans. No still frame. No text or letters anywhere in the frame.
+Inside: @image 8 shows the church a moment earlier, never a frame: THE ORGAN @image 7 at the left end, the open doors at the right end. Through the open doors is the sunlit yard of @image 10 : two rusty trucks, a sand STRIDER left of the doors, a dark grey STRIDER right of the doors. STRIDER: @image 11 .
+WHO IS WHERE at the start:
+THE ORGANIST @image 6 , rusty steel mask, dark brown hat, red scarf, sand duster, black gloves, face never visible, on the bench at THE ORGAN. THE TWIN PSALMS, @image 9 , copied exactly, lie on top of THE ORGAN beside the lamp; they are his only guns; his back scabbards are empty.
+In the open doorway, left to right: CARRION @image 2 , TUSK @image 3 , CALDERA @image 1 , MANGE @image 5 , DUNE @image 4 .
+CALDERA is the big gila-monster boss with beaded black-and-orange skin and a silver cross; he is never hit in this clip. From here on everyone is called by name only.
+SHOT 1. The same angle as the reference, THE ORGANIST in the left foreground at THE ORGAN, the doorway at the far right end, already moving. He snatches THE TWIN PSALMS off the organ, one in each hand, stands and turns. FIRST DOUBLE BLAST: both guns fire together at the left side of the doorway, two flashes, and CARRION and TUSK are thrown back and drop. SECOND DOUBLE BLAST, instantly, no gap: both guns fire together at the right side, two more flashes, and MANGE and DUNE are thrown back and drop. Two separate double blasts, four flashes in all. CALDERA stands untouched between the bodies. HARD CUT
+SHOT 2. Medium on CALDERA in the doorway, the sunlit yard behind him: the moment the second pair drops he spins around and runs out toward the dark grey STRIDER, alive and unhurt. HARD CUT
+SHOT 3. Tracking medium from behind THE ORGANIST as he walks fast down the aisle toward the open doors: he breaks THE TWIN PSALMS open, the empty shells fly out, he thumbs in two new shells and snaps them shut. Through the doors ahead, CALDERA swings into the saddle of the dark grey STRIDER and gallops off.
+Audio: a first double blast and, with no gap, a second double blast in shot 1; bodies hitting wood and dirt; fast running footsteps in shot 2; boots, empty shells ringing on the floor and claw feet outside in shot 3. No music, no organ.
+Avoid: no single blast, no pause between the two double blasts, CALDERA never hit, CALDERA never falls, no gang member firing, no new camera angle in shot 1, the organ never opens, no guns on his back, no holster, no pistols, no revolvers, no guns but THE TWIN PSALMS, THE ORGANIST never runs, no face under the mask, no ordinary horses, no blood, no gore, no text, no subtitles.

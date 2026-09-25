@@ -1,0 +1,14 @@
+EP01 title animation (owner 2026-09-25). The owner generated the BULLET HOLES title card in Nano Banana
+(rusted riveted iron, two smoking blast holes with light beams, "THE ORGANIST" in cream western letters,
+"EPISODE 1: IRON SUNDAY" on a red banner). Seedance: put that picture in the END FRAME slot; start frame
+empty. Two versions to try.
+
+=== A: TWO BLASTS (8 s)
+8-second clip, 16:9, photoreal cinematic title animation, film grain. The attached end-frame picture is the exact last frame of this clip. Start on a completely black screen, silent for one second. BANG: a shotgun blast tears a ragged hole through dark rusty iron on the left, hard dusty sunlight bursting through it in a beam, sparks and smoke. A split second later, BANG: a second hole tears open on the upper right with its own beam. Dust swirls in the two beams and smoke curls from the jagged edges. In the light of the beams, the title fades up out of the darkness, and then the red banner with the episode line slams into place below it with a heavy metallic thud. The last second holds still on exactly the end-frame picture. The words appear only exactly as in the end-frame picture, never moving, bending or changing letters; no other text.
+Audio: silence, two loud shotgun blasts with metal tearing, a ringing echo, a heavy metallic thud when the banner lands, then low wind. No music.
+Avoid: no misspelled or changing letters, no extra words, no people, no guns, no camera shake after the blasts, no colours other than the end-frame picture.
+
+=== B: SLOW BURN-IN (8 s)
+8-second clip, 16:9, photoreal cinematic title animation, film grain. The attached end-frame picture is the exact last frame of this clip. Start on a completely black screen. Faint thin smoke drifts in darkness; two small points of hot light glow where the blast holes will be. The camera eases slowly back as the two holes brighten and the dusty light beams grow across the dark rusty iron, dust drifting through them. The title slowly burns up out of the dark metal, its edges glowing faintly as it appears, and the red banner with the episode line fades in beneath it last. The camera settles and the final second holds still on exactly the end-frame picture. The words appear only exactly as in the end-frame picture, never moving, bending or changing letters; no other text.
+Audio: a low wind, a deep single note from a wheezing pipe organ that slowly swells, a soft metallic ring as the banner appears, then silence. No music score.
+Avoid: no misspelled or changing letters, no extra words, no people, no guns, no fast cuts, no colours other than the end-frame picture.

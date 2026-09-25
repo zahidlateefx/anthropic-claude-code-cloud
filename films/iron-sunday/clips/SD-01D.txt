@@ -1,0 +1,21 @@
+MODE: NEW CLIP (references) — duration 15 s — 16:9
+Individual rider shots. In the edit this sits between SD-01 and SD-01C (roughly 0:30-0:45).
+Every rider is seen on his mount, riding — medium shots, never a tight face close-up.
+All riders are focused and serious. Nobody laughs, nobody speaks.
+Attach order: image1 = RIDERS sheet, image2 = DUST-HORSE sheet, image5 = BOSS CALDERA sheet.
+
+15-second clip, 16:9, photoreal cinematic CG creature-feature western, gritty, film grain, anamorphic look. Five shots joined by hard cuts every three seconds. Every rider is at full gallop in every shot; the camera moves alongside him at the same speed and never shakes. Medium shots only: in every shot the rider and his mount are both fully visible from the mount's knees upward, filling most of the frame, and the rider's whole upper body, arms and reins are in frame. No tight face close-ups anywhere. No dialogue, no subtitles, no humans, no on-screen text.
+Look: a vast flat off-world desert of pale cracked dust and low rust-red mesas, hard midday sun, bleached white sky, heat shimmer along the horizon. Everything sun-bleached, rusty and dirty, nothing clean or new. The same light in every shot.
+References: @image1 are the nine gunmen, keep their faces, grey dusters, flat black hats and mismatched rifles exactly as drawn. @image2 is every mount, keep the leathery hide, the bone ridges down the neck and the split-claw hooves exactly as drawn. @image5 is BOSS CALDERA, keep his beaded black-and-orange hide, flat broad head and the heavy silver cross at his neck exactly as drawn.
+Cast: four of the gunmen (@image1) and BOSS CALDERA (@image5), each riding a dust-horse (@image2). In each shot one rider is sharp and alone in the frame; the rest of the convoy is far behind him and blurred. Every rider stares straight ahead, jaw set, focused and serious. Nobody laughs and nobody looks at the camera. Exactly these creatures exist in the clip.
+[0-3s] Side tracking medium shot of the rattlesnake gunman (@image1) on his dust-horse (@image2), 35 degree diagonal field of view, camera 8 m out to his side moving at his speed. Horse and rider fill the frame from the horse's knees upward. The horse's split-claw hooves reach and strike, its neck stretched out; the rider sits low over the saddle, duster flapping behind him, rifle strapped across his back, eyes forward. Blurred desert and dust stream past behind them.
+HARD CUT
+[3-6s] Same set-up on the buzzard gunman (@image1) on his dust-horse (@image2), taken from his other side. Ragged neck feathers flattened by the wind, one hand hard on the reins, the other on the saddle horn, back straight, eyes forward.
+HARD CUT
+[6-9s] Same set-up on the boar gunman (@image1) on his dust-horse (@image2), camera slightly lower so the hooves throw dust across the bottom of the frame. He leans forward over the horse's neck, hat jammed low, shotgun bouncing at his hip.
+HARD CUT
+[9-12s] Same set-up on one coyote gunman (@image1) on his dust-horse (@image2), camera slightly ahead of him so he rides toward it at an angle. Matted fur, torn ear, both hands on the reins, rifle strap cutting across his shoulder, eyes fixed on the horizon.
+HARD CUT
+[12-15s] Same set-up on BOSS CALDERA (@image5) on his dust-horse (@image2), framed a little wider so his full body and the whole mount are in the frame. His heavy bulk rides low and steady, duster spread over the horse's flanks, the silver cross swinging and bouncing on his chest, both revolvers at his belt. He stares straight ahead without any expression.
+Audio: only natural sound: one horse at a time, split-claw hooves hitting hard dry ground in a fast four-beat, saddle leather creaking, harness rattling, the mount breathing hard, wind roaring past, dust hissing. The sound cuts cleanly to the next horse at every cut. No voices of any kind. No background music.
+Avoid: no cut other than the ones listed, no tight face close-up, no head-only framing, no camera shake, no laughing, no talking, no rider looking into the lens, no rider changing face hat or weapon between shots, no second rider sharp in the same shot, no rocks cliffs or caves in front of the lens, no buildings, no birds, no people, no text, no dust in front of the riders.

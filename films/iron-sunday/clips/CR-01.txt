@@ -1,0 +1,17 @@
+MODE: NEW CLIP — 30 s — 16:9 — house format (rule 34). Straight after the title card.
+One character only. The crypt is a recurring location (the closing shot of every episode), so its
+image 15 is tagged; the clip opens on the stairs, not on the wall, so the reference cannot become the
+first frame. Ends on the next name, ELDER GRIST, in lantern light.
+Tag: image 1, 6, 5, 15. (image 5 only for the silver cross's look — CALDERA himself is not in frame.)
+
+30-second clip, 16:9, photoreal cinematic CG creature-feature western with animal characters, anamorphic, film grain. Five shots joined by hard cuts; the model sets the timing. Exactly one character. No dialogue, no subtitles, no humans. The first frame is already moving on the stairs; no still frame.
+Look: a low stone crypt under the ruined mission, damp pitted walls, a packed dirt floor, cobwebs, total darkness except the light of one hand-held oil lantern. @image 15 is the name wall: a design reference only, never a frame; copy its twelve carved names exactly and add no other writing. Dust, bone and rust; the only red is the scarf.
+Cast: THE ORGANIST @image 6 , rusty steel mask, dark brown hat, red scarf, sand duster, black gloves, two short shotguns on his back, face never visible. He carries a lit oil lantern in his left hand and CALDERA's heavy silver cross on its chain in his right, the cross exactly as worn by CALDERA @image 5 . Height @image 1 .
+SHOT 1. Close tracking shot on his boots and the lantern as THE ORGANIST @image 6 walks down a narrow worn stone staircase into darkness, the lantern light swinging over the steps, the silver cross swinging from his other hand. HARD CUT
+SHOT 2. Medium from behind, locked. THE ORGANIST @image 6 walks into the low crypt and stops in front of the name wall of @image 15 , raising the lantern; its light moves across the twelve carved names. His back is to the camera. HARD CUT
+SHOT 3. Close on the wall, locked. His gloved hand draws a knife and scrapes one deep line through the carved name BOSS CALDERA; stone dust falls from the cut. HARD CUT
+SHOT 4. Close, locked. His gloved hand hangs the silver cross by its chain on an iron nail under the scratched-out name. The cross swings twice and stops. HARD CUT
+SHOT 5. Slow push along the wall, the lantern light moving with it, from the scratched-out BOSS CALDERA to the next carved name, ELDER GRIST, and holding on it to the end.
+Physics: the lantern flame flickers and its light swings with every step; stone dust trickles from the scratch; the cross swings on its chain and settles.
+Audio: distance-true natural sound in a small stone room. Boots on stone steps and the lantern handle creaking in shot 1; water dripping somewhere in the dark and faint wind from the stairs above throughout; the knife scraping stone in shot 3; the chain clinking on the nail in shot 4; silence and one drip in shot 5. No music.
+Avoid: no attached image as a frame, no still first frame, no other characters, no face or skin under the mask, no hat removed, no light other than the lantern, no writing except the twelve names copied from @image 15 , no misspelled names, no blood, no gore.
