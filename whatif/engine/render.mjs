@@ -1,16 +1,18 @@
 // Deterministic frame renderer: loads an episode page in headless Chromium,
 // calls window.renderAt(t) per frame, screenshots, and pipes to ffmpeg.
 // Usage:
-//   node engine/render.mjs <episode-dir> [--fps 60] [--workers 2] [--stills 3,25,60] [--from 0 --to 10]
+//   node engine/render.mjs <episode-dir> [--fps 60] [--workers 2] [--stills 3,25,60] [--from 0 --to 10] [--gpu]
+// --gpu uses the machine's graphics card (laptop/desktop); default is software WebGL (cloud).
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawn, execFileSync } from 'node:child_process';
-import { chromium } from 'playwright-core';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
-const ep = args[0];
+const ep = args[0].replace(/\\/g, '/').replace(/\/$/, '');
 const opt = (k, d) => { const i = args.indexOf('--' + k); return i > 0 ? args[i + 1] : d; };
 const fps = +opt('fps', 60), workers = +opt('workers', 2);
 const outDir = path.join(root, 'out', path.basename(ep)); fs.mkdirSync(outDir, { recursive: true });
@@ -25,9 +27,13 @@ const server = http.createServer((req, res) => {
 await new Promise(r => server.listen(0, r));
 const url = `http://127.0.0.1:${server.address().port}/${ep}/index.html`;
 
+const gpu = args.includes('--gpu');
+const cloudChrome = '/opt/pw-browsers/chromium';
 const browser = await chromium.launch({
-  executablePath: '/opt/pw-browsers/chromium',
-  args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'],
+  executablePath: process.env.CHROME_PATH || (fs.existsSync(cloudChrome) ? cloudChrome : undefined),
+  args: gpu
+    ? ['--ignore-gpu-blocklist', '--enable-gpu', ...(process.platform === 'win32' ? ['--use-angle=d3d11'] : ['--use-angle=gl'])]
+    : ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'],
 });
 async function openPage() {
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
@@ -35,6 +41,10 @@ async function openPage() {
   page.on('console', m => m.type() === 'error' && console.error('console', m.text()));
   await page.goto(url);
   await page.waitForFunction(() => window.__ready === true, null, { timeout: 120000 });
+  if (!openPage.logged) {
+    openPage.logged = true;
+    console.log('WebGL renderer:', await page.evaluate(() => { const g = document.createElement('canvas').getContext('webgl2'); const e = g.getExtension('WEBGL_debug_renderer_info'); return e ? g.getParameter(e.UNMASKED_RENDERER_WEBGL) : g.getParameter(g.RENDERER); }));
+  }
   return page;
 }
 

@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "make": "node engine/make.mjs",
     "render": "node engine/render.mjs"
   },
   "dependencies": {
-    "playwright-core": "^1.55.0",
+    "playwright": "^1.55.0",
     "three": "^0.180.0"
   }
 }

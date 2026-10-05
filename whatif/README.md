@@ -7,11 +7,24 @@ deterministic frame capture, procedural sound design, ffmpeg mux. 1080×1920, 60
 ```bash
 npm i
 node engine/render.mjs episodes/01-sun-disappeared --stills 2,30,60   # quick look -> out/<ep>/still_*.jpg
-python3 episodes/01-sun-disappeared/audio.py                          # -> out/<ep>/audio.wav
-node engine/render.mjs episodes/01-sun-disappeared --workers 3        # -> out/<ep>/video.mp4
-engine/mux.sh 01-sun-disappeared                                      # -> out/<ep>/final.mp4
+npm run make -- episodes/01-sun-disappeared --gpu                     # audio + 60fps frames + final.mp4
 ```
-Needs Chromium at `/opt/pw-browsers/chromium`, ffmpeg, Python with numpy/scipy/soundfile.
+Output: `out/<episode>/final.mp4`. Drop `--gpu` on machines without a graphics card (cloud).
+The renderer prints `WebGL renderer: …` at start: with `--gpu` it should name your NVIDIA card.
+
+## Laptop setup (Windows, NVIDIA)
+1. Install **Node.js 20+** (nodejs.org), **Python 3.11+** (python.org, tick "Add to PATH"),
+   **FFmpeg** (`winget install Gyan.FFmpeg`), and **Git**.
+2. In a terminal:
+   ```bash
+   git clone <this repo> && cd <repo>/whatif
+   npm i
+   npx playwright install chromium
+   pip install numpy scipy soundfile
+   npm run make -- episodes/01-sun-disappeared --gpu --workers 2
+   ```
+3. If the renderer line says SwiftShader instead of NVIDIA: Windows Settings → Display → Graphics →
+   add the Chromium from step 2 and set it to "High performance".
 
 ## Episode format (keep it)
 - Hook title center, 0–4s: "What if …?"
