@@ -1,0 +1,5 @@
+@font-face{font-family:'EB Garamond';font-style:italic;font-weight:400;font-display:block;src:url(/engine/fonts/EBGaramond-italic-400.woff2) format('woff2')}
+@font-face{font-family:'EB Garamond';font-style:normal;font-weight:400;font-display:block;src:url(/engine/fonts/EBGaramond-normal-400.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400;font-display:block;src:url(/engine/fonts/Fraunces-normal-400.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:block;src:url(/engine/fonts/Inter-normal-500.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:block;src:url(/engine/fonts/Inter-normal-600.woff2) format('woff2')}
