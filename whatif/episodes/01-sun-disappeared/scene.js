@@ -173,7 +173,7 @@ moon.position.copy(moonDir).multiplyScalar(1000); scene.add(moon);
 // ---------- lights ----------
 const hemi = new THREE.HemisphereLight(0xcfe0ff, 0x6b5a40, 1.1); scene.add(hemi);
 const sunL = new THREE.DirectionalLight(0xffe2b8, 3.2);
-sunL.castShadow = true; sunL.shadow.mapSize.set(2048, 2048); sunL.shadow.bias = -0.0004; sunL.shadow.normalBias = 0.03;
+sunL.castShadow = true; sunL.shadow.intensity = 0.55; sunL.shadow.mapSize.set(2048, 2048); sunL.shadow.bias = -0.0004; sunL.shadow.normalBias = 0.03;
 Object.assign(sunL.shadow.camera, { left: -55, right: 55, top: 55, bottom: -55, near: 1, far: 400 });
 sunL.target.position.set(-2, 0, -38); scene.add(sunL, sunL.target);
 sunL.position.copy(sunDir).multiplyScalar(200).add(sunL.target.position);
@@ -184,7 +184,7 @@ const texL = new THREE.TextureLoader();
 // ---------- water + sea bed ----------
 const waterNormals = texL.load('/assets/tex/waternormals.jpg');
 waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping; waterNormals.repeat.set(70, 70);
-const waterM = new THREE.MeshStandardMaterial({ color: 0x23566f, roughness: 0.2, metalness: 0.1, normalMap: waterNormals, normalScale: new THREE.Vector2(0.8, 0.8), side: THREE.DoubleSide });
+const waterM = new THREE.MeshStandardMaterial({ color: 0x23566f, roughness: 0.3, metalness: 0.05, normalMap: waterNormals, normalScale: new THREE.Vector2(0.65, 0.65), side: THREE.DoubleSide });
 const water = new THREE.Mesh(new THREE.PlaneGeometry(1400, 1400).rotateX(-Math.PI / 2), waterM);
 water.position.set(692, 0, -698); water.receiveShadow = true; scene.add(water);
 const shoreDist = (x, z) => Math.min(x + 8, -1.8 - z);
@@ -478,7 +478,7 @@ window.renderAt = t => {
   bloom.strength = lerp(0.22, 0.55, out); bloom.threshold = lerp(0.97, 0.82, out); bloom.radius = 0.4;
 
   waterNormals.offset.set(t * 0.012 * (1 - ice), t * 0.008 * (1 - ice));
-  waterM.color.copy(mixC(WATER, ICE, ice)); waterM.roughness = lerp(0.2, 0.45, ice); waterM.normalScale.setScalar(lerp(0.8, 0.12, ice));
+  waterM.color.copy(mixC(WATER, ICE, ice)); waterM.roughness = lerp(0.3, 0.45, ice); waterM.normalScale.setScalar(lerp(0.65, 0.12, ice));
   crackM.opacity = smooth(54.5, 56, t) * 0.8; crackG.setDrawRange(0, Math.floor(crackN * smooth(54.5, 64, t) / 2) * 2);
   for (const b of boats) { const bob = 1 - ice; b.o.position.y = Math.sin(t * 1.3 + b.k) * 0.08 * bob - 0.05; b.o.rotation.z = Math.sin(t * 1.1 + b.k) * 0.05 * bob; b.o.rotation.x = Math.sin(t * 0.9 + b.k * 2) * 0.03 * bob; }
 
