@@ -6,6 +6,7 @@ deterministic frame capture, procedural sound design, ffmpeg mux. 1080×1920, 60
 ## Make an episode
 ```bash
 npm i
+node engine/fetch-assets.mjs                                       # CC0 Kenney models (~90 MB, once)
 node engine/render.mjs episodes/01-sun-disappeared --stills 2,30,60   # quick look -> out/<ep>/still_*.jpg
 npm run make -- episodes/01-sun-disappeared --gpu                     # audio + 60fps frames + final.mp4
 ```
@@ -20,6 +21,7 @@ The renderer prints `WebGL renderer: …` at start: with `--gpu` it should name 
    git clone <this repo> && cd <repo>/whatif
    npm i
    npx playwright install chromium
+   node engine/fetch-assets.mjs
    pip install numpy scipy soundfile
    npm run make -- episodes/01-sun-disappeared --gpu --workers 2
    ```
